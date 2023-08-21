@@ -1,3 +1,2 @@
-N = int(input("Введите число: "))
-list = [ x for x in range(N)]
+list = [i for i in input("Введите список: ").split()]
 print(list)
