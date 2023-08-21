@@ -1,7 +1,3 @@
-N = int(input("Введите количество моделей:"))
-list = []
-for i in range(N):
-    model = int(input('Введите модель: '))
-    list.append(model)
+list = [i for i in input("Введите модели: ").split()]
 print(list)
 print(list.remove(max(list)))
