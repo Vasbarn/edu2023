@@ -5,4 +5,12 @@ for i in stroka:
         slovar[i] += 1
     else:
         slovar[i] = 1
-    print(i, ":", slovar[i])
+print(slovar)
+inv_slovar = dict()
+for key, value in slovar.items():
+    if inv_slovar.get(value) is None:
+        inv_slovar[value] = [key]
+    else:
+        inv_slovar[value].append(key)
+print()
+print(inv_slovar)
