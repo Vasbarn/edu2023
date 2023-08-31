@@ -5,7 +5,7 @@ for i in text:
         slova.add(i)
     else:
         slova.remove(i)
-if len(slova) < 1:
+if len(slova) <= 1:
     print("Можно составить палиндром")
 else:
     print("Нельзя составить палиндром")
