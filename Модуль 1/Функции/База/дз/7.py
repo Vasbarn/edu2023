@@ -27,7 +27,7 @@ def guess_the_number():
         numb = int(input(f"Число лежит в диапазоне от {x1} до {x2} Попробуйте его отгадать : "))
         if numb == guess:
             print("Вы угадали!")
-            flag += 1
+            flag = 1
         else:
             print("Не угадали! Попробуйте еще раз")
 
