@@ -18,10 +18,6 @@ def rock_paper_scissors():
 
 
 
-
-
-
-
 def guess_the_number():
     flag = 0
     x1 = int(input("Задайте нижнюю границу интервала загаданных чисел: "))
