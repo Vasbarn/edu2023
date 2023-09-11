@@ -1,12 +1,14 @@
-def new_lst(*args):
-    spisok = []
-    for i in args:
-        for j in i:
-            if not isinstance(j, list):
-                spisok.append(j)
-            else:
-                result = new_lst(j)
-    spisok.append(result)
+from typing import Union
+
+
+def new_lst(value: Union[list, int], spisok: list = None):
+    if spisok is None:
+        spisok = []
+    if isinstance(value, int):
+        spisok.append(value)
+        return spisok
+    for i in value:
+        new_lst(i, spisok)
     return spisok
 
 

@@ -1,4 +1,4 @@
-def sum(*args):
+def sum(*args: int)->int:
     result = 0
     for arg in args:
         if isinstance(arg, list):
@@ -7,5 +7,5 @@ def sum(*args):
             result += arg
     return result
 
-# v = sum(1,3,4,5,6)
-# print(v)
+v = sum(1,3,4,5,6)
+print(v)

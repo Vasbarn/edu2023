@@ -14,10 +14,10 @@ file.close()
 Такая конструкция позволяет захватить ресурс (в данном случае файл), выполнить нужный набор операций (запись данных),
  а перед выходом – освободить ресурс.
 """
-with open("test.txt", "w") as file:
+with open("test.txt", "r") as file:
     print(len(file.readlines()))
 
 
 # для сохранения тестовых файлов с кириллическими символами необходимо указывать параметр encoding со значением "utf-8"
-with open("test.txt", "w", encoding="utf-8") as file:
+with open("test.txt", "a", encoding="utf-8") as file:
     file.close()
