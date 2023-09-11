@@ -18,3 +18,18 @@
 
 """
 # Твой код:
+def read_f(path: str) -> str:
+    """"Эта функция возвращает текст из файла"""
+    with open(path, 'r', encoding = "utf-8") as file:
+        otvet = file.read()
+        return otvet
+
+def get_sum(doc: str) -> int:
+    with open(doc, 'r', encoding="utf-8") as file:
+        for rows in file.readlines():
+            print(rows.split('\t'))
+
+
+            raise
+
+get_sum("Матрица.txt")
