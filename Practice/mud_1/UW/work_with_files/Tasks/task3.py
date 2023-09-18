@@ -24,6 +24,50 @@
 
 """
 # Твой код:
+from task2 import read_f
+
+matrix_2 = read_f("Матрица_2.txt")
+matrix = read_f("Матрица.txt")
+
+def get_symbols(datas: str) -> str:
+    result = ''
+    rows = datas.split("\n")
+    for row in rows:
+        s = ''
+        for num in row.split("\t"):
+            s += chr(int(num)) + "\t"
+        result += s + "\n"
+    return result[0:-1]
+
+
+
+def aggregate_it(matrix: str) -> str:
+    itog = ""
+    for row in matrix.split("\n"):
+        str_num = ""
+        strochka_letter = ""
+        str_sum = 0
+        for elem in row.split("\t"):
+            if elem.isnumeric():
+                str_num += elem
+                str_sum += int(elem)
+            else:
+                strochka_letter += elem
+        result = strochka_letter + str_num
+        itog += result +"\t"+ str(str_sum) + "\n"
+
+    return itog[:-1]
+
+
+
+
+
+
+
+v = get_symbols(matrix)
+z = aggregate_it(v)
+with open("Матрица_3.txt", "w", encoding="utf_8") as file:
+    file.write(z)
 
 
 

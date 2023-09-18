@@ -19,7 +19,7 @@
 # Твой код:
 from typing import List
 from random import randint
-def get_rows_with_ten_numbers(count: int = 10) -> str:
+def get_rows_with_numbers(count: int = 10) -> str:
     """"Функция для генераций списка случайных значений"""
     result_list = list()
 
@@ -38,16 +38,26 @@ def save_result(val: str):
         file.write(val[:-1])
 
 
+def calling(count: int = 1):
+    result = ''
+    for i in range(count):
+        rep = get_rows_with_numbers(count)
+        result += rep + "\n"
+    return result[:-1]
 
-print("Запускается процедура")
-res = ''
-for _ in range(10):
-    print(_/10, "выполнено")
-    v = get_rows_with_ten_numbers()
-    res += v + '\n'
-print("Сохраняем файл")
-save_result(res)
-print("Файл сохранен")
+
+
+
+if __name__ ==  "__main__":
+    res = ''
+    for _ in range(10):
+        print(_ / 10, "выполнено")
+        v = get_rows_with_numbers()
+        res += v + '\n'
+    print("Сохраняем файл")
+    save_result(res)
+    print(save_result(res))
+    print("Файл сохранен")
 
 
 
