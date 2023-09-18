@@ -39,15 +39,18 @@ def save_result(val: str):
 
 
 
-print("Запускается процедура")
-res = ''
-for _ in range(10):
-    print(_/10, "выполнено")
-    v = get_rows_with_ten_numbers()
-    res += v + '\n'
-print("Сохраняем файл")
-save_result(res)
-print("Файл сохранен")
+
+
+if __name__ ==  "__main__":
+    res = ''
+    for _ in range(10):
+        print(_ / 10, "выполнено")
+        v = get_rows_with_ten_numbers()
+        res += v + '\n'
+    print("Сохраняем файл")
+    save_result(res)
+    print(save_result(res))
+    print("Файл сохранен")
 
 
 

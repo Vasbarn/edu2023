@@ -5,7 +5,7 @@ def menu() -> int:
     print("1 - Ввести или обновить информацию", "2 - Вывести информацию", "0 - Завершить работу", sep="\n")
     vvod = int(input("Введите номер пункта меню: "))
     if vvod == 0:
-        exit
+        exit()
     elif vvod == 1:
         input_update()
     elif vvod == 2:
@@ -21,11 +21,11 @@ def input_update():
     if vvod == 0:
         menu()
     elif vvod == 1:
-        private()
+        x = private()
+        print(x)
     elif vvod == 2:
-        man_info()
-
-
+        z = man_info()
+        print(z)
 def private():
     name = input("Введите имя: ")
     age = int(input("Введите возраст: "))

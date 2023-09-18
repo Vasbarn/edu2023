@@ -24,6 +24,32 @@
 
 """
 # Твой код:
+from task2 import read_f
+
+x = read_f("Матрица_2.txt")
+def get_symbols(datas: str) -> str:
+    spisok=[]
+    listing = []
+    onemore = []
+    x = datas.split("\n")
+    for elem in x:
+        s = 0
+        z = elem.split()
+        for dannye in z:
+            dannye = chr(int(dannye))
+        spisok.append(dannye)
+        listing.append(spisok)
+    j = ''
+    for g in range(len(listing)):
+        j = ''
+        for f in range(len(spisok)):
+            j += listing[g][f]
+        onemore.append(j)
+        print(onemore)
 
 
+# def aggregate_it(matrix: str) -> str:
 
+
+v = get_symbols(x)
+print(v)

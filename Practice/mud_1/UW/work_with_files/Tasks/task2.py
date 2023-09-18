@@ -25,11 +25,45 @@ def read_f(path: str) -> str:
         return otvet
 
 def get_sum(doc: str) -> int:
-    with open(doc, 'r', encoding="utf-8") as file:
-        for rows in file.readlines():
-            print(rows.split('\t'))
+    x = doc.split()
+
+    x = [int(elem) for elem in x]
+    return sum(x)
 
 
-            raise
+def change_data(doc: str) -> str:
+    spisok = []
+    for elem in doc.split("\n"):
+        s = 0
+        x = elem.split()
+        for data in x:
+            s = int(s)
+            s += int(data)
+            s = str(s)
+        x.append(s)
+        spisok.append(x)
 
-get_sum("Матрица.txt")
+    listing = [0 for _ in range(len(spisok) + 1)]
+
+    for i in range(len(listing)):
+        for j in spisok:
+            listing[i] = int(listing[i])
+            listing[i] += int(j[i])
+            listing[i] = str(listing[i])
+    spisok.append(listing)
+    print(spisok)
+    peremennaya = ''
+    for f in range(len(spisok)):
+        peremennaya += ' '.join(spisok[f]) + '\n'
+    return peremennaya
+
+def save_data(func_res: str) -> None:
+    with open("Матрица_2.txt", "w", encoding="utf-8") as file:
+        file.write(func_res[:-1])
+
+
+if __name__ == "__main__":
+    gotoviy_f = read_f("Матрица.txt")
+    re_text = change_data(gotoviy_f)
+    save_data(re_text)
+
