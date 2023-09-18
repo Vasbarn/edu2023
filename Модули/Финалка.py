@@ -56,6 +56,7 @@ def man_info():
     s = (f"ОГРНИП: {ogrn}\n ИНН: {inn}\n Р/с: {counting_count}\n Банк: {bank_name}\n БИК: {bik}\n К/с: {respond_count}")
     return s
 
+
 # def back():
 def output():
     print(Sep)
