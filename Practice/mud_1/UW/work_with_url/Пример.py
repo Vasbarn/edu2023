@@ -16,12 +16,27 @@ import json
 
 
 value = {"Key": "Value"}
-
-with open ("json_file.json", "w", encoding="utf-8") as file:
-	x = json.dumps(value)
-	print(x)
-
-
 """
+
+# import json
+#
+# # запись json
+# value = {}
+# with open ("json_file.json", "w", encoding="utf-8") as file:
+# 	x = json.dumps(value, indent=4, ensure_ascii=False)
+# 	print(x)
+#
+# # загрузка json
+# with open("json_file.json", "r", encoding="utf-8") as file:
+# 	data = json.load(file)
+# print(data)
+# print(data[0])
+
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get("https://formulam2.ru/")
+soup = BeautifulSoup(response.text, "lxml")
+print(soup.find("div", class_="catalog-wrapper__content"))
 
 

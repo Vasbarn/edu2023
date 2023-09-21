@@ -6,12 +6,14 @@ def menu() -> int:
     vvod = int(input("Введите номер пункта меню: "))
     return vvod
 
+
 def input_update():
     print(Sep)
     print("ВВЕСТИ ИЛИ ОБНОВИТЬ ИНФОРМАЦИЮ")
     print("1 - Личная информация", "2 - Информация о предпринимателе", "0 - Назад", sep="\n")
     vvod = int(input("Введите номер пункта меню: "))
     return vvod
+
 
 def private():
     name = input("Введите имя: ")
@@ -42,6 +44,7 @@ def man_info():
     respond_count = int(input("Введите корреспондентский счет:"))
     s = (f"ОГРНИП: {ogrn}\n ИНН: {inn}\n Р/с: {counting_count}\n Банк: {bank_name}\n БИК: {bik}\n К/с: {respond_count}")
     return s
+
 
 def output():
     print(Sep)
