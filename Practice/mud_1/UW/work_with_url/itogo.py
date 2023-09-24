@@ -6,10 +6,11 @@ name_list = []
 price_list = []
 art_list = []
 slovar = {}
+pagination = 68
 response = requests.get("https://formulam2.ru/catalog/02_lakokrasochnye_materialy/")
 soup = BeautifulSoup(response.text, "lxml")
-articles = soup.find_all("div", class_="product-card__title")
-for elem in articles:
+test = soup.find_all("div", class_="product-card__title")
+for elem in test:
     link = elem.find('a')["href"]
     linkages.append(link)
 
