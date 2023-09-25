@@ -40,3 +40,4 @@ soup = BeautifulSoup(response.text, "lxml")
 print(soup.find("div", class_="catalog-wrapper__content"))
 
 
+m_dict = {"Артикул 123": {"Название": name, "Цена":price}}

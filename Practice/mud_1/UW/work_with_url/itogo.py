@@ -12,11 +12,17 @@ def get_requisits(borsch: "BeautifulSoup", diction: Dict[str, dict]) -> None:
     price = float(borsch.find(class_="product-card__new-price").find("span").text.replace(' ', '').strip())
     diction[article] = dict(Наименование=name, Цена=price, Ссылка=link)
 
+
 def get_max_page(url: str) -> int:
     """Получаем максимальное количество страниц в каталоге"""
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "lxml")
-    max_page = int(soup.find_all(class_="pagination__link")[-1].text.strip())
+    try:
+        max_page = int(soup.find_all(class_="pagination__link")[-1].text.strip())
+        print(233)
+    except (IndexError, TypeError):
+        max_page = 1
+    print(122)
     return max_page
 
 
