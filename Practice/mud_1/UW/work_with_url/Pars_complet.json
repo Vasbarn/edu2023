@@ -1,122 +1,602 @@
 {
-    " УТ-08425568": {
-        "Наименование": "Клей-герметик KRASS MS-полимер многоцелевой белый 290мл Польша; 0005448",
-        "Цена": "21   ₽ / шт"
+    "УТ-08425568": {
+        "Наименование": "Супер-клей универсальный 3гр; GHS325B A.D.M",
+        "Цена": 21.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/kley_kontaktnyy/super_kley_universalnyy_3gr_ghs325b_a_d_m/"
     },
-    " УТ-08432155": {
-        "Наименование": "Супер-клей КОНТАКТ универсальный 1гр блистер КМ120-П01; 22287",
-        "Цена": "28   ₽ / шт"
+    "УТ-08432155": {
+        "Наименование": "Супер-клей КОНТАКТ гель 1г пакет КМ120-П01 ГЛ; 23234",
+        "Цена": 28.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/kley_kontaktnyy/super_kley_kontakt_gel_1g_paket_km120_p01_gl_23234/"
     },
-    " _1у-0018311": {
-        "Наименование": "Лента армированная 50ммх50м черная в и/у Klebebander",
-        "Цена": "68   ₽ / шт"
+    "_1у-0018311": {
+        "Наименование": "Лента металлизированная 50ммх10м в и/у Klebabender",
+        "Цена": 68.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_spetsialnogo_naznacheniya/lenta_metallizirovannaya_50mmkh10m_v_i_u_klebabender/"
     },
-    " _479-000903": {
-        "Наименование": "Керосин \"Одуванчик\" 5л",
-        "Цена": "76   ₽ / шт"
+    "_479-000903": {
+        "Наименование": "Уайт-спирит \"Одуванчик\" 0,5л",
+        "Цена": 76.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/rastvoriteli_ochistiteli/uayt_spirit_oduvanchik_0_5l/"
     },
-    " _479-000900": {
-        "Наименование": "Растворитель 646 3,0л канистра; Интерсинтез",
-        "Цена": "84   ₽ / шт"
+    "_479-000900": {
+        "Наименование": "Керосин \"Одуванчик\" 0,5л",
+        "Цена": 84.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/rastvoriteli_ochistiteli/kerosin_oduvanchik_0_5l/"
     },
-    " _479-000897": {
+    "_479-000897": {
+        "Наименование": "Бензин \"Галоша\" 0,5л",
+        "Цена": 91.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/rastvoriteli_ochistiteli/benzin_galosha_0_5l_/"
+    },
+    "УТ-08407445": {
+        "Наименование": "МС-177 серебрянка 0.5 л",
+        "Цена": 105.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/olifa_kuzbasslak/ms_177_serebryanka_0_5_l/"
+    },
+    "_1у-0018027": {
+        "Наименование": "Кузбасслак 1л",
+        "Цена": 110.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/olifa_kuzbasslak/kuzbasslak_1l/"
+    },
+    "_1у-0017882": {
+        "Наименование": "Лента малярная бумажная 48ммх20м Klebebander",
+        "Цена": 115.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_malyarnyy/lenta_malyarnaya_bumazhnaya_48mmkh20m_klebebander/"
+    },
+    "_1у-0022908": {
+        "Наименование": "Лента двусторонняя полипропиленовая 38ммх10м в и/у Klebebander",
+        "Цена": 115.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_dvustoronniy/lenta_dvustoronnyaya_polipropilenovaya_38mmkh10m_v_i_u_klebebander/"
+    },
+    "_479-000906": {
         "Наименование": "Растворитель 646 \"Одуванчик\"0,5л",
-        "Цена": "91   ₽ / шт"
+        "Цена": 117.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/rastvoriteli_ochistiteli/rastvoritel_646_oduvanchik_0_5l/"
     },
-    " УТ-08407445": {
-        "Наименование": "Олифа Классика 5л",
-        "Цена": "105   ₽ / шт"
+    "_1у-0020866": {
+        "Наименование": "Покрывало защитное строительное 4мх5м 4Walls",
+        "Цена": 125.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/plenka_ukryvnaya/pokryvalo_zashchitnoe_stroitelnoe_4mkh5m_4walls/"
     },
-    " _1у-0018027": {
-        "Наименование": "Олифа Профи 3л",
-        "Цена": "110   ₽ / шт"
+    "_74-0000034": {
+        "Наименование": "Лента двусторонняя зеркальная 12ммх10м белая Klebebander",
+        "Цена": 125.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_dvustoronniy/lenta_dvustoronnyaya_zerkalnaya_12mmkh10m_belaya_klebebander/"
     },
-    " _1у-0017882": {
-        "Наименование": "Лента малярная бумажная 38мм*50м; Аллигатор",
-        "Цена": "115   ₽ / шт"
+    "_479-000909": {
+        "Наименование": "Растворитель 647 \"Одуванчик\"0,5л",
+        "Цена": 127.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/rastvoriteli_ochistiteli/rastvoritel_647_oduvanchik_0_5l/"
     },
-    " _1у-0022908": {
-        "Наименование": "Лента двусторонняя зеркальная 25ммх10м белая Klebebander",
-        "Цена": "115   ₽ / шт"
+    "_494-035183": {
+        "Наименование": "Ацетон \"Одуванчик\"0,5л",
+        "Цена": 127.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/rastvoriteli_ochistiteli/atseton_oduvanchik_0_5l/"
     },
-    " _479-000906": {
-        "Наименование": "Растворитель 647 0,5 л ; ХИМИК",
-        "Цена": "117   ₽ / шт"
+    "_479-000911": {
+        "Наименование": "Растворитель 650 \"Одуванчик\"0,5л",
+        "Цена": 136.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/rastvoriteli_ochistiteli/rastvoritel_650_oduvanchik_0_5l/"
     },
-    " _1у-0020866": {
-        "Наименование": "Укрывная пленка повышенной прочности  4м*12,5м, 8мкм UNIBOB 1/30 40187",
-        "Цена": "125   ₽ / шт"
+    "_1у-0015123": {
+        "Наименование": "Лента двусторонняя монтажная Милен 19ммх5м белая вспененный полиэтилен",
+        "Цена": 167.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_dvustoronniy/lenta_dvustoronnyaya_montazhnaya_milen_19mmkh5m_belaya_vspenennyy_polietilen/"
     },
-    " _74-0000034": {
-        "Наименование": "Лента двусторонняя полипропиленовая 50ммх25м в у/п Klebebander",
-        "Цена": "125   ₽ / шт"
+    "_1у-0017883": {
+        "Наименование": "Лента малярная бумажная 48ммх30м Klebebander",
+        "Цена": 173.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_malyarnyy/lenta_malyarnaya_bumazhnaya_48mmkh30m_klebebander/"
     },
-    " _479-000909": {
-        "Наименование": "Смывка цементного налёта NEOMID 560  гот.раствор тригер 0,5л",
-        "Цена": "127   ₽ / шт"
+    "УТ-08419673": {
+        "Наименование": "Герметик MasterTeks HomeMaster акриловый общестроительный 260мл белый; 9613080 / 9612900",
+        "Цена": 178.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/germetiki/germetik_masterteks_homemaster_akrilovyy_obshchestroitelnyy_260ml_belyy_9613080_9612900/"
     },
-    " _494-035183": {
-        "Наименование": "Смывка цементного налёта NEOMID 560 1:10 1л",
-        "Цена": "127   ₽ / шт"
+    "_494-082206": {
+        "Наименование": "Лента сигнальная 50ммх150м бело-красная; Альфапак",
+        "Цена": 180.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_spetsialnogo_naznacheniya/lenta_signalnaya_50mmkh150m_belo_krasnaya_alfapak/"
     },
-    " _479-000911": {
-        "Наименование": "PROSEPT RUST REMOVER - удалитель ржавчины 1:2, 1 л",
-        "Цена": "136   ₽ / шт"
+    "_1у-0016770": {
+        "Наименование": "Клей ПВА Строительный УНИВЕРСАЛ 1кг; ТЕКС",
+        "Цена": 190.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kley_pva/kley_pva_stroitelnyy_universal_1kg_teks/"
     },
-    " _1у-0015123": {
-        "Наименование": "Лента двусторонняя тканевая GAVIAL 50мм*5м; Аллигатор",
-        "Цена": "167   ₽ / шт"
+    "УТ-08443549": {
+        "Наименование": "Грунтовка СТ-17 глубокого проникновения 1 л; ЦЕРЕЗИТ",
+        "Цена": 195.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/gruntovki/gruntovka_st_17_glubokogo_proniknoveniya_1_l_tserezit/"
     },
-    " _1у-0017883": {
-        "Наименование": "Лента малярная бумажная 50мм*50м; Аллигатор",
-        "Цена": "173   ₽ / шт"
-    },
-    " УТ-08419673": {
-        "Наименование": "Герметик Tytan Professional X-treme для экстренного ремонта кровли 310мл прозрачный; 91776 ",
-        "Цена": "178   ₽ / шт"
-    },
-    " _494-082206": {
-        "Наименование": "Лента сигнальная 50ммх150м черно-желтая; Альфапак",
-        "Цена": "180   ₽ / шт"
-    },
-    " _1у-0016770": {
-        "Наименование": "Клей ПВА Master Klein универсальный, ведро 5кг; 1225",
-        "Цена": "190   ₽ / шт"
-    },
-    " УТ-08443549": {
-        "Наименование": "Грунтовка ГФ-21 Универсал красно-коричневый 1 кг; ТЕКС",
-        "Цена": "195   ₽ / шт"
-    },
-    " _422-000801": {
+    "_422-000801": {
         "Наименование": "Очиститель пены XFLEX 500мл; 9412045",
-        "Цена": "203   ₽ / шт"
+        "Цена": 203.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/ochistitel_dlya_peny/ochistitel_peny_xflex_500ml_9412045/"
     },
-    " УТ-08432160": {
-        "Наименование": "Клей Момент-1 в шоубоксе 50 мл",
-        "Цена": "208   ₽ / шт"
+    "УТ-08432160": {
+        "Наименование": "Супер-клей КОНТАКТ для пластика 4гр+2мл блистер КМ120-Б42 ПЛ; 22289",
+        "Цена": 208.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/kley_kontaktnyy/super_kley_kontakt_dlya_plastika_4gr_2ml_blister_km120_b42_pl_22289/"
     },
-    " УТ-08425289": {
-        "Наименование": "Алюминиевая клейкая лента Альфа 48мм х 50м  1/36",
-        "Цена": "208   ₽ / шт"
+    "УТ-08425289": {
+        "Наименование": "Лента клейкая армированная 48ммх10м KLEO PRO для труб",
+        "Цена": 208.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_spetsialnogo_naznacheniya/lenta_kleykaya_armirovannaya_48mmkh10m_kleo_pro_dlya_trub/"
     },
-    " _Б-00027958": {
-        "Наименование": "Защитно-декоративное покрытие для древесины Акватекс Сканди лакрица, 2,5 л; Рогнеда",
-        "Цена": "217   ₽ / шт"
+    "_Б-00027958": {
+        "Наименование": "Средство санирующее Санатекс Универсал 0,5 л; ТЕКС",
+        "Цена": 217.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/sredstvo_saniruyushchee_sanateks_universal_0_5_l_teks/"
     },
-    " _494-026971": {
-        "Наименование": "Грунтовка СТ-16/10 п/тонк штукатурке CERESIT",
-        "Цена": "219   ₽ / шт"
+    "_494-026971": {
+        "Наименование": "Грунтовка глубокого проникновения GRUNT MASTER 5 кг/пет.бутылка",
+        "Цена": 219.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/gruntovki/gruntovka_glubokogo_proniknoveniya_grunt_master_5_kg_pet_butylka/"
     },
-    " УТ-08378155": {
-        "Наименование": "Лента малярная розовая Tesa, 25 мм x 25 м",
-        "Цена": "223   ₽ / шт"
+    "УТ-08378155": {
+        "Наименование": "Малярная клейкая лента в инд. упаковке Альфа 48мм х 40м, белая 1/36",
+        "Цена": 223.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_malyarnyy/malyarnaya_kleykaya_lenta_v_ind_upakovke_alfa_48mm_kh_40m_belaya_1_36/"
     },
-    " _9-00000018": {
-        "Наименование": "Эмаль ПФ-115 PROREMONTT серый RAL 7004 1,9кг; 0006670",
-        "Цена": "229   ₽ / шт"
+    "_9-00000018": {
+        "Наименование": "Эмаль Фазенда белая 0,9кг",
+        "Цена": 229.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/emal_fazenda_belaya_0_9kg/"
     },
-    " УТ-08423222": {
-        "Наименование": "Краска аэрозоль PaintersTouch 2X универсальная на алкидной основе, клюква глянцевый 340 мл",
-        "Цена": "258   ₽ / шт"
+    "УТ-08423222": {
+        "Наименование": "Лак аэрозольный CORALINO 520мл глянцевый 200г; C10190",
+        "Цена": 258.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_aerozolnaya/lak_aerozolnyy_coralino_520ml_glyantsevyy_200g_c10190/"
+    },
+    "УТ-08413616": {
+        "Наименование": "Морилка ВДАК 21 сосна 1 кг; РАДУГА",
+        "Цена": 260.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/morilki/morilka_vdak_21_sosna_1_kg_raduga/"
+    },
+    "УТ-08413615": {
+        "Наименование": "Морилка ВДАК 21 орех 1 кг; РАДУГА",
+        "Цена": 260.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/morilki/morilka_vdak_21_orekh_1_kg_raduga/"
+    },
+    "УТ-08413614": {
+        "Наименование": "Морилка ВДАК 21 махагон 1 кг; РАДУГА",
+        "Цена": 260.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/morilki/morilka_vdak_21_makhagon_1_kg_raduga/"
+    },
+    "УТ-08413613": {
+        "Наименование": "Морилка ВДАК 21 лиственница 1 кг; РАДУГА",
+        "Цена": 260.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/morilki/morilka_vdak_21_listvennitsa_1_kg_raduga/"
+    },
+    "УТ-08413612": {
+        "Наименование": "Морилка ВДАК 21 дуб 1 кг; РАДУГА",
+        "Цена": 260.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/morilki/morilka_vdak_21_dub_1_kg_raduga/"
+    },
+    "УТ-08429613": {
+        "Наименование": "Лак ХВ-784 0,5л красное дерево; 75409, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_krasnoe_derevo_75409_diola/"
+    },
+    "УТ-08429617": {
+        "Наименование": "Лак ХВ-784 0,5л палисандр; 75424, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_palisandr_75424_diola/"
+    },
+    "УТ-08429615": {
+        "Наименование": "Лак ХВ-784 0,5л мокко; 75425, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_mokko_75425_diola/"
+    },
+    "УТ-08429610": {
+        "Наименование": "Лак ХВ-784 0,5л дуб мореный; 75426, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_dub_morenyy_75426_diola/"
+    },
+    "УТ-08429616": {
+        "Наименование": "Лак ХВ-784 0,5л орех; 75406, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_orekh_75406_diola/"
+    },
+    "УТ-08429612": {
+        "Наименование": "Лак ХВ-784 0,5л клен; 75428, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_klen_75428_diola/"
+    },
+    "УТ-08429614": {
+        "Наименование": "Лак ХВ-784 0,5л лиственница; 75404, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_listvennitsa_75404_diola/"
+    },
+    "УТ-08429611": {
+        "Наименование": "Лак ХВ-784 0,5л дуб; 75403, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_dub_75403_diola/"
+    },
+    "УТ-08429618": {
+        "Наименование": "Лак ХВ-784 0,5л сосна; 75402, Диола",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_sosna_75402_diola/"
+    },
+    "_1у-0022920": {
+        "Наименование": "Лента армированная 50ммх25м серая в и/у Klebebander",
+        "Цена": 267.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_spetsialnogo_naznacheniya/lenta_armirovannaya_50mmkh25m_seraya_v_i_u_klebebander/"
+    },
+    "УТ-08443545": {
+        "Наименование": "Очиститель пены AQUANOVA 650мл",
+        "Цена": 291.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/ochistitel_dlya_peny/ochistitel_peny_aquanova_650ml/"
+    },
+    "_1у-0025999": {
+        "Наименование": "Эмаль ПФ-115 ОПТИМУМ белая мат 0,9кг; ЛЕНИНГРАДСКИЕ КРАСКИ",
+        "Цена": 299.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/emal_pf_115_optimum_belaya_mat_0_9kg_leningradskie_kraski/"
+    },
+    "УТ-08429609": {
+        "Наименование": "Лак ХВ-784 0,5л бесцветный; 75401, Диола",
+        "Цена": 300.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_khv_784_0_5l_bestsvetnyy_75401_diola/"
+    },
+    "_494-010760": {
+        "Наименование": "Эмаль АКРИЛОВАЯ для радиаторов \"Универсал\" п/гл 0,4 л",
+        "Цена": 312.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/emal_akrilovaya_dlya_radiatorov_universal_p_gl_0_4_l/"
+    },
+    "УТ-08429622": {
+        "Наименование": "Грунт-эмаль 3 в 1 по ржавчине зеленый 0,8 кг; 75066, ДИОЛА",
+        "Цена": 319.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/grunt_emal_3_v_1_po_rzhavchine_zelenyy_0_8_kg_75066_diola/"
+    },
+    "УТ-08429623": {
+        "Наименование": "Грунт-эмаль 3 в 1 по ржавчине черный 0,8 кг; 75065, ДИОЛА",
+        "Цена": 319.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/grunt_emal_3_v_1_po_rzhavchine_chernyy_0_8_kg_75065_diola/"
+    },
+    "УТ-08429621": {
+        "Наименование": "Грунт-эмаль 3 в 1 по ржавчине белый 0,8 кг; 75053, ДИОЛА",
+        "Цена": 319.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/grunt_emal_3_v_1_po_rzhavchine_belyy_0_8_kg_75053_diola/"
+    },
+    "УТ-08411530": {
+        "Наименование": "Грунт-эмаль 3 в 1 по ржавчине голубой 0,8 кг; ДИОЛА",
+        "Цена": 319.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/grunt_emal_3_v_1_po_rzhavchine_goluboy_0_8_kg_diola_/"
+    },
+    "УТ-08411526": {
+        "Наименование": "Грунт-эмаль 3 в 1 по ржавчине желтый 0,8 кг; ДИОЛА",
+        "Цена": 319.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/grunt_emal_3_v_1_po_rzhavchine_zheltyy_0_8_kg_diola_/"
+    },
+    "УТ-08411522": {
+        "Наименование": "Грунт-эмаль 3 в 1 по ржавчине серый 0,8 кг; 75051, ДИОЛА",
+        "Цена": 319.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/grunt_emal_3_v_1_po_rzhavchine_seryy_0_8_kg_75051_diola/"
+    },
+    "_1у-0022894": {
+        "Наименование": "Лента алюминиевая 50ммх25м 50мкм в и/у Klebebander",
+        "Цена": 324.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/skotch_spetsialnogo_naznacheniya/lenta_alyuminievaya_50mmkh25m_50mkm_v_i_u_klebebander/"
+    },
+    "_1-00004410": {
+        "Наименование": "Клей монтажный Момент Монтаж Суперсильный МВп-70 прозрачный 280 г",
+        "Цена": 351.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/zhidkie_gvozdi/kley_montazhnyy_moment_montazh_supersilnyy_mvp_70_prozrachnyy_280_g/"
+    },
+    "_494-029368": {
+        "Наименование": "Краска-спрей ODIS 450 мл белый матовый; 1007",
+        "Цена": 362.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_aerozolnaya/kraska_sprey_odis_450_ml_belyy_matovyy_1007/"
+    },
+    "УТ-08378321": {
+        "Наименование": "Лак яхтный полуматовый 0,7 л; FAKTURA",
+        "Цена": 375.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_yakhtnyy_polumatovyy_0_7_l_faktura/"
+    },
+    "_1у-0016595": {
+        "Наименование": "Клей монтажный Момент Монтаж Экспресс MB-50 белый 400 г",
+        "Цена": 382.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/zhidkie_gvozdi/kley_montazhnyy_moment_montazh_ekspress_mb_50_belyy_400_g/"
+    },
+    "_494-026972": {
+        "Наименование": "GRUNT MASTER грунтовка глубокого проникновения 10кг/пет. бутылка",
+        "Цена": 399.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/gruntovki/grunt_master_gruntovka_glubokogo_proniknoveniya_10kg_pet_butylka/"
+    },
+    "_37-0000132": {
+        "Наименование": "Краска В/Д моющаяся глубокоматовая Профи А 0,9 л; ТЕКС",
+        "Цена": 408.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_vodno_dispersionnaya/kraska_vodno_dispersionnaya_dlya_vnutrennikh_rabot/kraska_v_d_moyushchayasya_glubokomatovaya_profi_a_0_9_l_teks/"
+    },
+    "_494-006391": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Сосна 0,8л; ТЕКС",
+        "Цена": 408.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_sosna_0_8l_teks/"
+    },
+    "_494-006421": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Палисандр 0,8л; ТЕКС",
+        "Цена": 408.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_palisandr_0_8l_teks/"
+    },
+    "_494-006418": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS орех 0,8л; ТЕКС",
+        "Цена": 408.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_orekh_0_8l_teks/"
+    },
+    "_494-006415": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS орегон 0,8л; ТЕКС",
+        "Цена": 408.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_oregon_0_8l_teks/"
+    },
+    "_494-006412": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Махагон 0,8л; ТЕКС",
+        "Цена": 408.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_makhagon_0_8l_teks/"
+    },
+    "_494-006385": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS бесцветный 0,8л; ТЕКС",
+        "Цена": 408.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_bestsvetnyy_0_8l_teks/"
+    },
+    "_494-006388": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Тик 0,8л; ТЕКС",
+        "Цена": 408.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_tik_0_8l_teks/"
+    },
+    "_1у-0016588": {
+        "Наименование": "Клей монтажный Момент Монтаж DG II суперсильный МВ-70 белый 400 г",
+        "Цена": 424.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/zhidkie_gvozdi/kley_montazhnyy_moment_montazh_dg_ii_supersilnyy_mv_70_belyy_400_g/"
+    },
+    "УТ-08407031": {
+        "Наименование": "Лак для камня У-405 1 кг УСАДЬБА Диола",
+        "Цена": 427.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_dlya_kamnya_u_405_1_kg_usadba_diola/"
+    },
+    "_494-070463": {
+        "Наименование": "Герметик MasterTeks HomeMaster силиконовый универсальный 260мл белый; 9612920",
+        "Цена": 442.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/germetiki/germetik_masterteks_homemaster_silikonovyy_universalnyy_260ml_belyy_9612920/"
+    },
+    "_494-070461": {
+        "Наименование": "Герметик MasterTeks HomeMaster силиконовый cанитарный 260мл белый; 9612918",
+        "Цена": 442.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/germetiki/germetik_masterteks_homemaster_silikonovyy_canitarnyy_260ml_belyy_9612918_/"
+    },
+    "_1у-0016771": {
+        "Наименование": "Клей ПВА Строительный УНИВЕРСАЛ 3кг; ТЕКС",
+        "Цена": 456.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kley_pva/kley_pva_stroitelnyy_universal_3kg_teks/"
+    },
+    "УТ-08429064": {
+        "Наименование": "Огнебиозащита II группа Диола-101 5кг с индикатором; 6616, Диола",
+        "Цена": 499.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/ognebiozashchita/ognebiozashchita_ii_gruppa_diola_101_5kg_s_indikatorom_6616_diola/"
+    },
+    "_1у-0019903": {
+        "Наименование": "Пена монтажная Tytan Professional GUN профессиональная летняя 750мл; 21215",
+        "Цена": 499.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/peny/pena_montazhnaya_tytan_professional_gun_professionalnaya_letnyaya_750ml_21215/"
+    },
+    "_3-00000342": {
+        "Наименование": "Плёнка защитная с клейким слоем 2700ммх20м Maskо 4WALLS",
+        "Цена": 511.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/skotch_plenki/plenka_ukryvnaya/plyenka_zashchitnaya_s_kleykim_sloem_2700mmkh20m_masko_4walls/"
+    },
+    "УТ-08407627": {
+        "Наименование": "Лак яхтный глянцевый 0,7 л; FAKTURA",
+        "Цена": 546.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_yakhtnyy_glyantsevyy_0_7_l_faktura/"
+    },
+    "_494-066494": {
+        "Наименование": "Краска В/Д для фасадов Универсал 3 кг; ТЕКС",
+        "Цена": 550.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_vodno_dispersionnaya/kraska_vodno_dispersionnaya_dlya_naruzhnikh_rabot/kraska_v_d_dlya_fasadov_universal_3_kg_teks/"
+    },
+    "_494-010761": {
+        "Наименование": "Эмаль АКРИЛОВАЯ для радиаторов \"Универсал\" п/гл 0,8 л",
+        "Цена": 569.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/emal_akrilovaya_dlya_radiatorov_universal_p_gl_0_8_l/"
+    },
+    "_1у-0010073": {
+        "Наименование": "Грунтовка СТ-17 PRO глубокого проникновения морозостойкая 5 л; ЦЕРЕЗИТ",
+        "Цена": 617.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/gruntovki/gruntovka_st_17_pro_glubokogo_proniknoveniya_morozostoykaya_5_l_tserezit/"
+    },
+    "УТ-08378514": {
+        "Наименование": "Пена монтажная Tytan Professional 65 UNI профессиональная летняя 750мл; 30217/16968",
+        "Цена": 619.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/peny/pena_montazhnaya_tytan_professional_65_uni_professionalnaya_letnyaya_750ml_30217_16968/"
+    },
+    "УТ-08407626": {
+        "Наименование": "Лак яхтный матовый 0,7 л; FAKTURA",
+        "Цена": 630.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_yakhtnyy_matovyy_0_7_l_faktura/"
+    },
+    "УТ-08414973": {
+        "Наименование": "Эмаль-грунт по ржавчине РжавоSTOP Профи красная 0,9 кг; Текс",
+        "Цена": 669.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/emal_grunt_po_rzhavchine_rzhavostop_profi_krasnaya_0_9_kg_teks/"
+    },
+    "_494-047067": {
+        "Наименование": "Жидкие гвозди каучуковые MasterTeks ProfiMaster сверхпрочный прозрачный 300гр 200 кг/м2; 9752868",
+        "Цена": 698.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/zhidkie_gvozdi/zhidkie_gvozdi_kauchukovye_masterteks_profimaster_sverkhprochnyy_prozrachnyy_300gr_200_kg_m2_9752868/"
+    },
+    "УТ-08430005": {
+        "Наименование": "Пена монтажная MasterTeks PM 70+ 890мл профессиональная всесезонная 1010гр; 9413295",
+        "Цена": 699.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/peny/pena_montazhnaya_masterteks_pm_70_890ml_professionalnaya_vsesezonnaya_1010gr_9413295/"
+    },
+    "_22-0000305": {
+        "Наименование": "Герметик Makroflex SX101 санитарный силиконовый бесцветный 290 мл",
+        "Цена": 704.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/germetiki/germetik_makroflex_sx101_sanitarnyy_silikonovyy_bestsvetnyy_290_ml/"
+    },
+    "_22-0000304": {
+        "Наименование": "Герметик Makroflex SX101 санитарный силиконовый белый 290 мл",
+        "Цена": 704.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/peny_germetiki_kleya/germetiki/germetik_makroflex_sx101_sanitarnyy_silikonovyy_belyy_290_ml/"
+    },
+    "УТ-08415743": {
+        "Наименование": "Эмаль термостойкая Д-510 антикоррозионная матовая 0,4 л черная",
+        "Цена": 715.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/emal_termostoykaya_d_510_antikorrozionnaya_matovaya_0_4_l_chernaya/"
+    },
+    "_501-002821": {
+        "Наименование": "Грунтовка СТ-17 концентрат глубокого проникновения 1 л; ЦЕРЕЗИТ",
+        "Цена": 738.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/gruntovki/gruntovka_st_17_kontsentrat_glubokogo_proniknoveniya_1_l_tserezit/"
+    },
+    "_1у-0015469": {
+        "Наименование": "Краска В/Д для стен и потолков Euro Power 7 матовая С 0,9 л; TIKKURILA",
+        "Цена": 749.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_vodno_dispersionnaya/kraska_vodno_dispersionnaya_dlya_vnutrennikh_rabot/kraska_v_d_dlya_sten_i_potolkov_euro_power_7_matovaya_s_0_9_l_tikkurila/"
+    },
+    "УТ-08411523": {
+        "Наименование": "Грунт-эмаль 3 в 1 по ржавчине серый 1,7 кг; ДИОЛА",
+        "Цена": 762.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/grunt_emal_3_v_1_po_rzhavchine_seryy_1_7_kg_diola_/"
+    },
+    "_Б-00024197": {
+        "Наименование": "Краска декоративная Miranol медь 0,1 л; TIKKURILA",
+        "Цена": 779.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraski_i_shtukaturki_dekorativnye/kraski_sostavy_dekorativnye/kraska_dekorativnaya_miranol_med_0_1_l_tikkurila/"
+    },
+    "_37-0000093": {
+        "Наименование": "Краска В/Д моющаяся глубокоматовая Профи А 1,8 л; ТЕКС",
+        "Цена": 788.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_vodno_dispersionnaya/kraska_vodno_dispersionnaya_dlya_vnutrennikh_rabot/kraska_v_d_moyushchayasya_glubokomatovaya_profi_a_1_8_l_teks/"
+    },
+    "_1у-0026000": {
+        "Наименование": "Эмаль ПФ-115 ОПТИМУМ белая мат 2,7кг; ЛЕНИНГРАДСКИЕ КРАСКИ",
+        "Цена": 799.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/emal_pf_115_optimum_belaya_mat_2_7kg_leningradskie_kraski/"
+    },
+    "_494-059824": {
+        "Наименование": "Лак яхтный Rapan Yacht глянцевый 0,9 л; FINNCOLOR",
+        "Цена": 799.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_yakhtnyy_rapan_yacht_glyantsevyy_0_9_l_finncolor/"
+    },
+    "_37-0000138": {
+        "Наименование": "Отбеливатель древесины Профи 5 л; ТЕКС",
+        "Цена": 882.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/otbelivatel_drevesiny_profi_5_l_teks/"
+    },
+    "_1у-0015466": {
+        "Наименование": "Краска В/Д для стен и потолков Euro Power 7 матовая А 0,9 л; TIKKURILA",
+        "Цена": 899.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_vodno_dispersionnaya/kraska_vodno_dispersionnaya_dlya_vnutrennikh_rabot/kraska_v_d_dlya_sten_i_potolkov_euro_power_7_matovaya_a_0_9_l_tikkurila/"
+    },
+    "УТ-08411527": {
+        "Наименование": "Грунт-эмаль 3 в 1 по ржавчине желтый 1,7 кг; ДИОЛА",
+        "Цена": 975.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/grunt_emal_3_v_1_po_rzhavchine_zheltyy_1_7_kg_diola_/"
+    },
+    "УТ-08430765": {
+        "Наименование": "Краска резиновая MAXIMA универсальная 2,5кг база С; BaltiColor Group",
+        "Цена": 999.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/emali/kraska_rezinovaya_maxima_universalnaya_2_5kg_baza_s_balticolor_group/"
+    },
+    "УТ-08429063": {
+        "Наименование": "Огнебиозащита II группа Диола-101 10кг с индикатором; 6615, Диола",
+        "Цена": 999.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/ognebiozashchita/ognebiozashchita_ii_gruppa_diola_101_10kg_s_indikatorom_6615_diola/"
+    },
+    "_Б-00024182": {
+        "Наименование": "Краска декоративная Miranol серебро 0,1 л; TIKKURILA",
+        "Цена": 999.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraski_i_shtukaturki_dekorativnye/kraski_sostavy_dekorativnye/kraska_dekorativnaya_miranol_serebro_0_1_l_tikkurila/"
+    },
+    "_1у-0010072": {
+        "Наименование": "Грунтовка СТ-17 PRO глубокого проникновения морозостойкая 10 л; ЦЕРЕЗИТ",
+        "Цена": 1078.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/gruntovki/gruntovka_st_17_pro_glubokogo_proniknoveniya_morozostoykaya_10_l_tserezit/"
+    },
+    "_37-0000209": {
+        "Наименование": "Краска В/Д для фасадов Универсал 6,5 кг; ТЕКС",
+        "Цена": 1139.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_vodno_dispersionnaya/kraska_vodno_dispersionnaya_dlya_naruzhnikh_rabot/kraska_v_d_dlya_fasadov_universal_6_5_kg_teks/"
+    },
+    "_494-053992": {
+        "Наименование": "Масло для террас и садовой мебели Valtti Terrace oil EC 0,9 л; TIKKURILA",
+        "Цена": 1149.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/masla_dlya_dereva/maslo_dlya_terras_i_sadovoy_mebeli_valtti_terrace_oil_ec_0_9_l_tikkurila/"
+    },
+    "УТ-08378733": {
+        "Наименование": "Ацетон \"Одуванчик\"5,0л",
+        "Цена": 1173.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/rastvoriteli_ochistiteli/atseton_oduvanchik_5_0l/"
+    },
+    "УТ-08407032": {
+        "Наименование": "Лак для камня У-405 3 кг УСАДЬБА Диола",
+        "Цена": 1194.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_dlya_kamnya_u_405_3_kg_usadba_diola/"
+    },
+    "УТ-08431727": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Темный орех 2,7л; ТЕКС",
+        "Цена": 1282.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_temnyy_orekh_2_7l_teks/"
+    },
+    "_494-006386": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS бесцветный 2,7л; ТЕКС",
+        "Цена": 1282.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_bestsvetnyy_2_7l_teks/"
+    },
+    "_494-006422": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Палисандр 2,7л; ТЕКС",
+        "Цена": 1282.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_palisandr_2_7l_teks/"
+    },
+    "_494-006419": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS орех 2,7л; ТЕКС",
+        "Цена": 1282.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_orekh_2_7l_teks/"
+    },
+    "_494-006416": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS орегон 2,7л; ТЕКС",
+        "Цена": 1282.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_oregon_2_7l_teks/"
+    },
+    "_494-006413": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Махагон 2,7л; ТЕКС",
+        "Цена": 1282.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_makhagon_2_7l_teks/"
+    },
+    "_494-006389": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Тик 2,7л; ТЕКС",
+        "Цена": 1282.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_tik_2_7l_teks/"
+    },
+    "_494-006392": {
+        "Наименование": "Защитный Состав 2-в-1 BIOTEKS Сосна 2,7л; ТЕКС",
+        "Цена": 1282.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/antiseptiki_propitki/zashchitnyy_sostav_2_v_1_bioteks_sosna_2_7l_teks/"
+    },
+    "_422-020446": {
+        "Наименование": "Масло для полов в банях и саунах Supi Lattiaoljy 0,9 л; TIKKURILA",
+        "Цена": 1549.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/masla_dlya_dereva/maslo_dlya_polov_v_banyakh_i_saunakh_supi_lattiaoljy_0_9_l_tikkurila/"
+    },
+    "_422-036153": {
+        "Наименование": "Лак паркетный Эко-Лак BIOTEKS Профи полуматовый 2 л; ТЕКС",
+        "Цена": 1614.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_parketnyy_eko_lak_bioteks_profi_polumatovyy_2_l_teks/"
+    },
+    "_422-036151": {
+        "Наименование": "Лак паркетный Эко-Лак BIOTEKS Профи глянцевый 2 л; ТЕКС",
+        "Цена": 1614.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/derevozashchita/laki/lak_parketnyy_eko_lak_bioteks_profi_glyantsevyy_2_l_teks/"
+    },
+    "_967-000026": {
+        "Наименование": "Краска В/Д для фасадов Профи А 4,5 л; ТЕКС",
+        "Цена": 1709.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_vodno_dispersionnaya/kraska_vodno_dispersionnaya_dlya_naruzhnikh_rabot/kraska_v_d_dlya_fasadov_profi_a_4_5_l_teks/"
+    },
+    "_37-0000124": {
+        "Наименование": "Краска В/Д моющаяся глубокоматовая Профи А 4,5 л; ТЕКС",
+        "Цена": 1852.0,
+        "Ссылка": "https://formulam2.ru/catalog/02_lakokrasochnye_materialy/kraska_vodno_dispersionnaya/kraska_vodno_dispersionnaya_dlya_vnutrennikh_rabot/kraska_v_d_moyushchayasya_glubokomatovaya_profi_a_4_5_l_teks/"
     }
 }
