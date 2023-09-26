@@ -19,31 +19,24 @@ def get_max_page(url: str) -> int:
     soup = BeautifulSoup(response.text, "lxml")
     try:
         max_page = int(soup.find_all(class_="pagination__link")[-1].text.strip())
-        print(233)
     except (IndexError, TypeError):
         max_page = 1
-    print(122)
     return max_page
 
 
-# slovar = {}
-# pagination = 5
-# response = requests.get("https://formulam2.ru/catalog/02_lakokrasochnye_materialy/")
-# soup = BeautifulSoup(response.text, "lxml")
-# max_page = int(soup.find_all(class_="pagination__link")[-1].text.strip())
-# for nump in range(1, 4+1):
-#     response = requests.get(f"https://formulam2.ru/catalog/02_lakokrasochnye_materialy/?PAGEN_1={nump}")
-#     soup = BeautifulSoup(response.text, "lxml")
-#     goods = soup.find_all("div", class_="product-card products-grid__item")
-#     for good in goods:
-#         get_requisits(good, slovar)
-#     print(nump)
-#     print(str(nump) + "/" + str(max_page), end="\r")
+slovar = {}
+page = get_max_page()
+for nump in range(1, page+1):
+    response = requests.get(f"{}?PAGEN_1={nump}")
+    soup = BeautifulSoup(response.text, "lxml")
+    goods = soup.find_all("div", class_="product-card products-grid__item")
+    for good in goods:
+        get_requisits(good, slovar)
+    print(nump)
+    print(str(nump) + "/" + str(page), end="\r")
 
-page = get_max_page("https://formulam2.ru/catalog/01_sukhie_smesi_teploizolyatsiya_gipsokarton/gipsokarton_gipsovolokno_lenty_setki/gkl_gvl/")
-print(page)
-# with open("Pars_complet.json", "w", encoding="utf-8") as file:
-#     file.write(json.dumps(slovar, ensure_ascii=False, indent=4))
+with open("Pars_complet.json", "w", encoding="utf-8") as file:
+    file.write(json.dumps(slovar, ensure_ascii=False, indent=4))
 
 
 
