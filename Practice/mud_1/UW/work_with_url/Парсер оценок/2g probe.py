@@ -11,22 +11,23 @@ def get_links(way: str) -> Dict[str, str]:
     df = pandas.read_excel(way, index_col="Название магазина")
     return df.to_dict()
 
+def get_adres(url: str) -> list:
+    response = requests.get(url, headers=header).text
+    soup = BeautifulSoup(response, "lxml")
+    adr = soup.find_all("div", class_="_13eh3hvq")
+    print(adr)
 def get_rating(url: str) -> list:
     response = requests.get(url, headers=header).text
     soup = BeautifulSoup(response, "lxml")
-    contains = soup.find(class_="_y10azs")
-    cont2 = contains.find_all("div")
-    print(contains)
+    contains = soup.find_all("div",class_="_y10azs")
+    for cont in contains:
+        print(cont)
 
 
 
 path = os.path.abspath("Список магазинов.xlsx")
 links: dict = get_links(path).get("Ссылка")
 for link in links.values():
-    get_rating(link)
-    
-
-
-
-
-
+    # get_rating(link)
+    get_adres(link)
+    break
