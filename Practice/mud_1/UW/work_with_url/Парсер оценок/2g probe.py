@@ -11,23 +11,34 @@ def get_links(way: str) -> Dict[str, str]:
     df = pandas.read_excel(way, index_col="Название магазина")
     return df.to_dict()
 
-def get_adres(url: str) -> list:
+
+def get_rating(url: str, adres: str, listing: list) -> list:
     response = requests.get(url, headers=header).text
     soup = BeautifulSoup(response, "lxml")
-    adr = soup.find_all("div", class_="_13eh3hvq")
-    print(adr)
-def get_rating(url: str) -> list:
-    response = requests.get(url, headers=header).text
-    soup = BeautifulSoup(response, "lxml")
-    contains = soup.find_all("div",class_="_y10azs")
-    for cont in contains:
-        print(cont)
+    main = soup.find(class_ = "_1tfwnxl")
+    contains = main.find(class_="_y10azs")
+    contains2 = main.find(class_="_jspzdm")
+    diction = {}
+    diction["Количество отзывов"] = contains2.text
+    diction["Рейтинг"] = contains.text
+    diction["Название магазина"] = adres
+    listing.append(diction)
 
 
 
+
+
+spisok = []
 path = os.path.abspath("Список магазинов.xlsx")
 links: dict = get_links(path).get("Ссылка")
-for link in links.values():
-    # get_rating(link)
-    get_adres(link)
-    break
+for key,value in links.items():
+    get_rating(value, key, spisok)
+
+dataf = pandas.DataFrame(spisok)
+otkritie = pandas.read_excel(path, sheet_name = "Лист1")
+df = otkritie.merge(dataf, left_on="Название магазина", right_on="Название магазина")
+df.to_excel(path, sheet_name= "Лист1", index=False)
+print(df)
+
+
+
