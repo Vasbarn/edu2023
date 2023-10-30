@@ -8,7 +8,7 @@ import random
 class Family_part:
     def __init__(self, role: str, hunger: int = random.randint(30, 100)):
         self.role = role
-        self.hunger = hunger
+        self.__hunger = hunger
 
     def work(self, family: "Family"):
         print(f"{self.role} поработал(-а)")
