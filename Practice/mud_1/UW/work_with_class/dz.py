@@ -24,7 +24,7 @@ class Family_part:
         if family.food >= 10:
             family.food -= 10
             self.hunger += 10
-        elif family.food > 0 and family.food < 10:
+        elif family.food >= 0 and family.food < 10:
             print("Мало еды. Придется идти в магазин")
             Family_part.food_shop(self, family)
 
@@ -32,20 +32,22 @@ class Family_part:
         if self.hunger < 50:
             Family_part.eat(self, family)
     def death_event(self, family: "Family"):
-        if self.hunger <= 0 or family.food <=0:
+        if self.hunger <= 0:
             print(f"{self.role} погиб(-ла)")
 
 
 class Family:
-    def __init__(self, quantity: list = (), budget:int = random.randint(40000,250000), house_own: str = "Нет", car_own: str = "Нет", food: int = random.randint(0,100)):
-        self.quantity = quantity
+    def __init__(self, budget:int = random.randint(40000,250000), house_own: str = "Нет", car_own: str = "Нет",
+                 food: int = random.randint(0,100)):
+        self.quantity = []
         self.budget = budget
         self.house_own = house_own
         self.car_own = car_own
         self.food = food
 
     def info(self):
-        print(f"Состав семьи: {self.quantity}\n Семейный бюджет: {self.budget} рублей\n Количество еды: {self.food}\n Дом: {self.house_own}\n Машина: {self.car_own}")
+        print(f"Состав семьи: {self.quantity}\n Семейный бюджет: {self.budget} рублей\n Количество еды: {self.food}\n "
+              f"Дом: {self.house_own}\n Машина: {self.car_own}")
 
 
     def add_part(self, pf: "Family_part"):
@@ -63,7 +65,7 @@ class Family:
             print("Семья приобрела новый дом")
         else:
             print("Недостаточно средств для приобретения")
-            self.house_own = "Нет"
+
 
     def buy_car(self):
         if self.budget >= 500000:
@@ -72,14 +74,20 @@ class Family:
             print("Семья приобрела новую машину")
         else:
             print("Недостаточно средств для приобретения")
-            self.car_own = "Нет"
 
-scd = Family([])
-fst = Family_part("Отец")
-for i in range(100):
-    fst.work(scd)
-    fst.food_shop(scd)
-    fst.eat(scd)
-    fst.hunger_check(scd)
-    fst.death_event(scd)
+
+
+
+family = Family(food=10)
+fam_part = Family_part("Отец")
+family.info()
+print()
+family.add_part(fam_part)
+family.info()
+print()
+fam_part.eat(family)
+family.info()
+fam_part.eat(family)
+family.info()
+
 
