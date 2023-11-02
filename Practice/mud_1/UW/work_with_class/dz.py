@@ -5,6 +5,8 @@
 # метод работать (+100к, сытость -20), покупать(-50к, +40 еды), есть
 # 100 дней
 import random
+
+
 class Family_part:
     def __init__(self, role: str, hunger: int = random.randint(30, 100)):
         self.role = role
