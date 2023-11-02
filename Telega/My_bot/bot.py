@@ -1,0 +1,34 @@
+from aiogram.utils import executor
+from aiogram.types import BotCommand
+import asyncio
+import os
+from datetime import datetime
+import json
+import pandas as pd
+
+
+import logging
+
+from create_bot import dp
+from handlers import common, studies
+
+from database import memory_bot
+
+logging.basicConfig(level=logging.INFO)
+
+
+async def on_startup(_):
+    logging.info("Бот по обучению онлайн")
+    await memory_bot.load_memory(dp)
+    commands = [
+        BotCommand(command="/authorization", description="Авторизация"),
+        BotCommand(command="/actions", description="Доступные действия"),
+        BotCommand(command="/about_me", description="Информация о пользователе"),
+    ]
+    await dp.bot.set_my_commands(commands)
+
+common.register_handlers(dp)
+studies.register_handlers(dp)
+
+if __name__ == "__main__":
+    executor.start_polling(dp, skip_updates=False, on_startup=on_startup)
