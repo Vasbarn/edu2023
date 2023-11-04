@@ -1,12 +1,5 @@
 from aiogram.utils import executor
 from aiogram.types import BotCommand
-import asyncio
-import os
-from datetime import datetime
-import json
-import pandas as pd
-
-
 import logging
 
 from create_bot import dp
@@ -18,12 +11,14 @@ logging.basicConfig(level=logging.INFO)
 
 
 async def on_startup(_):
+
     logging.info("Бот по обучению онлайн")
-    await memory_bot.load_memory(dp)
+    # await memory_bot.load_memory(dp)
     commands = [
         BotCommand(command="/authorization", description="Авторизация"),
         BotCommand(command="/actions", description="Доступные действия"),
         BotCommand(command="/about_me", description="Информация о пользователе"),
+        BotCommand(command="/start", description="Начало работы")
     ]
     await dp.bot.set_my_commands(commands)
 
