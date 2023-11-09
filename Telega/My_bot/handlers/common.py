@@ -11,16 +11,18 @@ import logging
 
 
 class FSMCommon(StatesGroup):
-
+    # auth = State()
     first_state = State()
     mob_state = State()
     adress_state = State()
     order_state = State()
 
 async def cmd_start(message: types.Message, state: FSMContext):
+    await message.from_user.
     await message.answer("Приветствуем вас в нашем ресторане!\n")
     await message.answer("Введите имя и фамилию")
     # await state.set_state(FSMCommon.mob_state.state)
+    # await FSMCommon.auth.set()
     await FSMCommon.first_state.set()
 
 async def name_input(message:types.Message, state: FSMContext):
