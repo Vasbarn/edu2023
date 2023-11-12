@@ -15,9 +15,9 @@ async def on_startup(_):
     logging.info("Бот по обучению онлайн")
     # await memory_bot.load_memory(dp)
     commands = [
-        # BotCommand(command="/authorization", description="Авторизация"),
-        # BotCommand(command="/actions", description="Доступные действия"),
-        # BotCommand(command="/about_me", description="Информация о пользователе"),
+        BotCommand(command="/authorization", description="Авторизация"),
+        # BotCommand(command="/move", description="Доступные действия"),
+        # BotCommand(command="/info_about_me", description="Информация о пользователе"),
         BotCommand(command="/start", description="Начало работы")
     ]
     await dp.bot.set_my_commands(commands)

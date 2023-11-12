@@ -16,20 +16,36 @@ class FSMCommon(StatesGroup):
     mob_state = State()
     adress_state = State()
     order_state = State()
+    prom_state = State()
 
 async def cmd_start(message: types.Message, state: FSMContext):
-    await message.from_user.
     await message.answer("Приветствуем вас в нашем ресторане!\n")
     await message.answer("Введите имя и фамилию")
     # await state.set_state(FSMCommon.mob_state.state)
     # await FSMCommon.auth.set()
     await FSMCommon.first_state.set()
 
-async def name_input(message:types.Message, state: FSMContext):
-    async with state.proxy() as datas:
-        datas["Имя"] = message.text
-    await message.answer("Очень приятно! Введите адрес")
-    await FSMCommon.adress_state.set()
+
+async def cmd_infome(message: types.Message, state: FSMContext):
+    aidi = message.from_user.id
+    uname = message.from_user.username
+    name = message.from_user.first_name
+    surname = message.from_user.last_name
+    async with state.proxy() as dats:
+        dats["ID"]= message.from_user.id
+        dats["Логин"] = message.from_user.username
+        dats["Имя"] = message.from_user.first_name
+        dats["Фамилия"] = message.from_user.last_name
+    # await message.answer("Введите свое имя")
+async def cmd_authorize(message: types.Message, state: FSMContext):
+    await message.answer("Введите ФИО")
+    await FSMCommon.prom_state.set()
+
+# async def name_input(message:types.Message, state: FSMContext):
+#     async with state.proxy() as datas:
+#         datas["Имя"] = message.text
+#     await message.answer("Очень приятно! Введите адрес")
+#     await FSMCommon.adress_state.set()
 
 async def addres(message: types.Message,state: FSMContext):
     async with state.proxy() as datas:
@@ -42,8 +58,8 @@ async def mobile(message: types.Message, state: FSMContext):
         await message.answer("Повторите ввод номера")
         return
     else:
-        async with state.proxy() as datas:
-            datas["Номер"] = message.text
+        # async with state.proxy() as datas:
+        #     datas["Номер"] = message.text
         await message.answer("Данные сохранены. Что будете заказывать?")
         await FSMCommon.order_state.set()
 
@@ -69,28 +85,10 @@ async def order(message: types.Message, state: FSMContext):
         await message.answer("Еще один пункт добавлен. Напишите 'Конец'")
 
 
-
-
-
-
-
-
-
-
-
-async def greetings(message: types.Message, state: FSMCommon):
-    await message.answer(f"Очень приятно,{message.text}")
-    await message.answer("Я умею пародировать речь")
-    await FSMCommon.next()
-
-
-async def echo(message: types.Message, state: FSMContext):
-    await message.answer(message.text)
-    await message.reply(message.text)
-
-
 def register_handlers(dp: Dispatcher):
-    dp.register_message_handler(cmd_start, commands="start")
+    dp.register_message_handler(cmd_start, commands = "start")
+    dp.register_message_handler(cmd_authorize, commands ="authorization")
+    dp.register_message_handler(cmd_authorize,state=FSMCommon.prom_state)
     dp.register_message_handler(name_input, state=FSMCommon.first_state)
     dp.register_message_handler(addres,state=FSMCommon.adress_state)
     dp.register_message_handler(mobile, state=FSMCommon.mob_state)
