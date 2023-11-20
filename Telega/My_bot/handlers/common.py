@@ -1,7 +1,7 @@
 from aiogram import Dispatcher, types
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardRemove
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 from datetime import datetime
 import logging
@@ -53,10 +53,17 @@ async def cmd_infome(message: types.Message, state: FSMContext):
 
 
 async def cmd_move(message: types.Message, state: FSMContext):
+
+    kb = ReplyKeyboardMarkup()
+    kb.add(KeyboardButton(text=1))
+    kb.add(KeyboardButton(text=2))
+
+
     if message.text == "/move":
         await message.answer("Выберите номер действия:\n"
                              "1 - Сделать заказ\n"
-                             "2 - Мои заказы")
+                             "2 - Мои заказы", reply_markup=kb)
+
         await FSMCommon.choice_select_move.set()
     elif int(message.text) == 1:
         if await state.get_data("Номер"):
