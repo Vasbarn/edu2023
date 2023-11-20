@@ -15,6 +15,7 @@ async def on_startup(_):
     logging.info("Бот по обучению онлайн")
     # await memory_bot.load_memory(dp)
     commands = [
+        BotCommand(command="/start", description="Начало работы"),
         BotCommand(command="/move", description="Доступные действия"),
         BotCommand(command="/info_about_me", description="Информация о пользователе"),
 

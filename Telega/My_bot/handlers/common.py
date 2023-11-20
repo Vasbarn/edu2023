@@ -53,9 +53,7 @@ async def cmd_infome(message: types.Message, state: FSMContext):
 
 
 async def cmd_move(message: types.Message, state: FSMContext):
-    print("Мы в функции")
     if message.text == "/move":
-        print("move")
         await message.answer("Выберите номер действия:\n"
                              "1 - Сделать заказ\n"
                              "2 - Мои заказы")
@@ -69,45 +67,55 @@ async def cmd_move(message: types.Message, state: FSMContext):
             await authorization(message, state)
     elif int(message.text) == 2:
         if await state.get_data("Номер"):
-            await message.answer("Тут ваши заказы")
-            await FSMCommon.my_order_state.set()
+            # await message.answer("Тут ваши заказы")
+
+            await message.answer("Вот ваш заказ")
+            print("We in Func")
+            async with state.proxy() as datas:
+                if datas.get("Заказы"):
+                    for index, elem in enumerate(datas.get("Заказы")):
+                        await message.answer(
+                            f"Ваши заказы: {index + 1}-й заказ - {len(elem)} {elem}")
+
+                else:
+                    await message.answer("Заказов больше нет")
+
         else:
             await message.answer("Вы не можете посмотреть заказы, авторизуйтесь.")
             await authorization(message, state)
-        await FSMCommon.my_order_state.set()
+
     else:
         await message.answer("Что то пошло не так. Повторите ввод")
         return
 
-
 async def order(message: types.Message, state: FSMContext):
-    ord_count = 1
-    space_count = 0
     async with state.proxy() as datas:
-        if len(datas) < 4:
-            await message.answer("Вы еще не авторизовались")
-            await FSMCommon.auth_state.set()
-        elif message.text.lower() != "конец":
-            datas[f"{ord_count}-й заказ"] = message.text
-            ord_count += 1
-            for symbol in message.text:
-                if symbol == " ":
-                    space_count += 1
-            datas[f"Количество позиций заказа {ord_count} "] = f"{space_count - 1} позиций"
+        if not datas.get("Заказы"):
+            datas["Заказы"] = []
+        if not datas.get("Текущий заказ"):
+            datas["Текущий заказ"] = []
+        if message.text.lower() != "конец":
+            datas["Текущий заказ"].append(message.text)
             await message.answer("Еще один пункт добавлен. Напишите 'Конец', если хотите завершить заказ")
-            return
         else:
+            datas["Заказы"].append((datas["Текущий заказ"].copy()))
+            datas.pop("Текущий заказ")
             await message.answer("Заказ сформирован.")
-            await FSMCommon.my_order_state.set()
+            await message.answer("Выберите номер действия:\n"
+                                 "1 - Сделать заказ\n"
+                                 "2 - Мои заказы")
+            await FSMCommon.choice_select_move.set()
 
-async def my_order(message: types.Message, state: FSMContext):
-    ord_count = 1
-    async with state.proxy() as datas:
-        if datas[f"{ord_count}-й заказ"] != "":
-            await message.answer(f"Ваши заказы: {ord_count}-й заказ - {datas[f'Количество позиций заказа {ord_count}']}")
-            ord_count += 1
-        else:
-            await message.answer("Заказов больше нет")
+# async def my_order(message: types.Message, state: FSMContext):
+#     ord_count = 1
+#     await message.answer("Вот ваш заказ")
+#     print("We in Func")
+#     async with state.proxy() as datas:
+#         while datas[f"{ord_count}-й заказ"] != "":
+#             await message.answer(f"Ваши заказы: {ord_count}-й заказ - {datas[f'Количество позиций заказа {ord_count}']}")
+#             ord_count += 1
+#         else:
+#             await message.answer("Заказов больше нет")
 
 async def cmd_start(message: types.Message, state: FSMContext):
     """При старте, начинаем процедуру авторизации"""
@@ -168,5 +176,5 @@ def register_handlers(dp: Dispatcher):
     dp.register_message_handler(waiting_fname, state=FSMCommon.fathername_state)
     dp.register_message_handler(check_number, state=FSMCommon.numb_state)
     dp.register_message_handler(order,state=FSMCommon.order_state)
-    dp.register_message_handler(my_order, state=FSMCommon.my_order_state)
+    # dp.register_message_handler(my_order, state=FSMCommon.my_order_state)
 
