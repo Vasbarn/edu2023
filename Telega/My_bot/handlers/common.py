@@ -54,9 +54,13 @@ async def cmd_infome(message: types.Message, state: FSMContext):
 
 async def cmd_move(message: types.Message, state: FSMContext):
 
-    kb = ReplyKeyboardMarkup()
-    kb.add(KeyboardButton(text=1))
-    kb.add(KeyboardButton(text=2))
+    kb = ReplyKeyboardMarkup(row_width=3)
+    kb.row(KeyboardButton(text=1), KeyboardButton(text=2), KeyboardButton(text=2), KeyboardButton(text=2))
+    kb.insert(KeyboardButton(text=2))
+    kb.insert(KeyboardButton(text="a"))
+    kb.insert(KeyboardButton(text="b"))
+    kb.insert(KeyboardButton(text="c"))
+
 
 
     if message.text == "/move":
