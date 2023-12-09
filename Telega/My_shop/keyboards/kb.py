@@ -1,5 +1,5 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
+import json
 kb_auth = InlineKeyboardMarkup(row_width=1)
 button = InlineKeyboardButton(text="Авторизоваться", callback_data="authorization")
 kb_auth.insert(button)
@@ -23,5 +23,15 @@ kb_yn.insert(no)
 kb_buy = InlineKeyboardMarkup(row_width=2)
 add_cart = InlineKeyboardButton(text="Добавить в корзину", callback_data="add_cart")
 delete_cart = InlineKeyboardButton(text="Убрать из корзины", callback_data="del_cart")
+kb_buy.insert(add_cart)
+kb_buy.insert(delete_cart)
+
+def get_kb_buy(index: int)-> InlineKeyboardMarkup:
+    kb_buy = InlineKeyboardMarkup(row_width=2)
+    add_cart = InlineKeyboardButton(text="Добавить в корзину", callback_data=f"add_cart_{index}")
+    delete_cart = InlineKeyboardButton(text="Убрать из корзины", callback_data=f"del_cart_{index}")
+    kb_buy.insert(add_cart)
+    kb_buy.insert(delete_cart)
+    return kb_buy
 
 

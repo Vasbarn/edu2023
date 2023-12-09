@@ -14,7 +14,8 @@ async def on_startup(_):
         BotCommand(command="auth", description="Авторизация"),
         BotCommand(command="balance", description="Баланс счета"),
         BotCommand(command="add_money", description="Пополнить баланс"),
-        BotCommand(command="volley", description="Корзина")
+        BotCommand(command="volley", description="Корзина"),
+        BotCommand(command="catalog", description="Каталог")
         ]
     await dp.bot.set_my_commands(commands)
 
