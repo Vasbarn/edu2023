@@ -33,5 +33,14 @@ def get_kb_buy(index: int)-> InlineKeyboardMarkup:
     kb_buy.insert(add_cart)
     kb_buy.insert(delete_cart)
     return kb_buy
+def get_kb_basket(index: int) -> InlineKeyboardMarkup:
+    kb_basket = InlineKeyboardMarkup(row_width=1)
+    delete_bask = InlineKeyboardButton(text="Убрать из корзины", callback_data=f"del_bask{index}")
+    kb_basket.insert(delete_bask)
+    return kb_basket
 
-
+kb_basket_buy = InlineKeyboardMarkup(row_width=2)
+buy = InlineKeyboardButton(text="Купить", callback_data="buy")
+cancel = InlineKeyboardButton(text="Отмена", callback_data="cancel")
+kb_basket_buy.insert(buy)
+kb_basket_buy.insert(cancel)

@@ -3,7 +3,7 @@ from aiogram.types import BotCommand
 import logging
 from my_bot import dp
 from handlers import commands
-
+import memory_bot
 
 logging.basicConfig(level=logging.INFO)
 
@@ -15,10 +15,11 @@ async def on_startup(_):
         BotCommand(command="balance", description="Баланс счета"),
         BotCommand(command="add_money", description="Пополнить баланс"),
         BotCommand(command="volley", description="Корзина"),
-        BotCommand(command="catalog", description="Каталог")
+        BotCommand(command="catalog", description="Каталог"),
+        BotCommand(command="start", description="Начало")
         ]
     await dp.bot.set_my_commands(commands)
-
+    await memory_bot.load_memory(dp)
 commands.register_handlers(dp)
 
 if __name__ == "__main__":
