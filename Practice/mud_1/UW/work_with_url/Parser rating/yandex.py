@@ -52,8 +52,8 @@ for key,value in links.items():
     get_rating(value,key,spisok)
 
 
-# dataf = pandas.DataFrame(spisok)
-# otkritie = pandas.read_excel(path, sheet_name = "Лист1")
-# df = otkritie.merge(dataf, left_on="Название магазина", right_on="Название магазина")
-# df.to_excel(path, sheet_name= "Лист2", index=False)
-# print(df)
+dataf = pandas.DataFrame(spisok)
+otkritie = pandas.read_excel(path, sheet_name = "Лист1")
+df = otkritie.merge(dataf, left_on="Название магазина", right_on="Название магазина")
+df.to_excel(path, sheet_name= "Лист2", index=False)
+print(df)

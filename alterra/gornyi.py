@@ -1,53 +1,67 @@
 from bs4 import BeautifulSoup
 import requests
 import lxml
+import json
 
-ssylki = []
-links = []
-path = []
-names = []
-articles = []
-prices=[]
-numb=[]
+
+
 url = "https://gorniy.formulam2.ru/"
 
-response = requests.get(url)
 
-soup = BeautifulSoup(response.text, "lxml")
-otdels = soup.find_all(class_="catalog__list-item depth_level_1")
-for elem in otdels:
-    href = elem.find_all("a")
-    for i in href:
-        thing = i.get("href")
-        ssylki.append(thing)
-x = ssylki[1]
-url2 = url + x
+def get_main_link(url: str, slovar: dict):
+    slovar["Link"] = []
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "lxml")
+    division = soup.find_all(class_="catalog__list-item depth_level_1")
+    for sub_div in division:
+        href = sub_div.find_all("a")
+        for good_pg in href:
+            good = good_pg.get("href")
+            slovar["Link"].append(url+good)
+    return slovar['Link']
 
-response2 = requests.get(url2)
-schi = BeautifulSoup(response2.text, "lxml")
-way = schi.find_all(class_="product-card__title")
-art = schi.find_all(class_ = "product-card__index")
-price = schi.find_all(class_="product-card__new-price")
-for el in way:
-    fullway = el.find("a").get("href")
-    name = el.find("div", class_ = "js-toclamp-4").text
-    names.append(name)
-    path.append(url+fullway)
-for a in art:
-    articles.append(a.text[4:])
-for pr in price:
-    g = pr.text.split("/")
-    prices.append(g[0][:-2])
-    numb.append("Цена ФормулаМ2Горный за" + g[1])
-print(prices)
-print(numb)
+def get_goods_info(borsch: "BeautifulSoup", slovar: dict):
+    print(borsch)
+    way = borsch.find("div", class_="product-card__img").find("a").get("href")
+    name = borsch.find("div", class_="js-toclamp-4").text
+    art = borsch.find("div", class_ = "product-card__index")
+    price = borsch.find("div", class_="product-card__new-price").find("span").text
+    quantity = borsch.find("div", class_="product-card__new-price").text.split("/")[1]
+    slovar["Ссылка на товар"] = way
+    slovar["Наименование"] = name
+    slovar["Артикул"] = art
+    slovar["Цена"] = price
+    slovar["Единица измерения"] = "Цена ФормулаМ2Горный за" + quantity
+
+def get_pages(url: str):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "lxml")
+    try:
+        max_page = int(soup.find_all(class_="pagination__link")[-1].text.strip())
+    except (IndexError, TypeError):
+        max_page = 1
+    return max_page
 
 
 
-# for j in list(set(ssylki)):
-#     url2 = url + j
-#     # links.append(url2)
-#     response2 = requests.get(url2)
-#     soup = BeautifulSoup(response2.text, "lxml")
-#     print(soup)
+slovar={}
+quantity = get_main_link(url, slovar)
+for x in range(len(quantity) + 1):
+    pages = get_pages(slovar["Link"][x])
+    for page in range(1, pages+1):
+        response = requests.get(f'{slovar["Link"][x]}?PAGEN_1={page}')
+        soup = BeautifulSoup(response.text, "lxml")
+        goods = soup.find_all("div", class_="products-grid__row")
+        for good in goods:
+            get_goods_info(good, slovar)
+        print(page)
+        print(str(page) + "/" + str(pages), end="\r")
+
+
+with open("Parser_mount.json", "w", encoding="utf-8") as file:
+    file.write(json.dumps(slovar, ensure_ascii=False, indent=4))
+
+
+
+
 
