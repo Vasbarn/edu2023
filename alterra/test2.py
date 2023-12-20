@@ -31,7 +31,7 @@ slovar = {}
 response = requests.get("https://gorniy.formulam2.ru/catalog/")
 soup = BeautifulSoup(response.text, "lxml")
 links = soup.find_all("div", class_="catalog-sections-item__img")
-for lin in links[0:5]:
+for lin in links:
     link = "https://gorniy.formulam2.ru/"+lin.find("a")["href"]
 
     page = get_max_page(link)
