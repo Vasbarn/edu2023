@@ -5,6 +5,10 @@ from typing import Dict
 import pandas as pd
 import os
 from pandas.io.excel import ExcelWriter
+from openpyxl import *
+
+
+
 def get_requisits(borsch: "BeautifulSoup", diction: Dict[str, dict]) -> None:
     """Получаем основные реквизиты позиций и добавляем их в словарь"""
     blink = "https://gorniy.formulam2.ru/" + borsch.find(class_="product-card__title").find("a").get("href")
@@ -13,9 +17,7 @@ def get_requisits(borsch: "BeautifulSoup", diction: Dict[str, dict]) -> None:
     price = float(borsch.find(class_="product-card__new-price").find("span").text.replace(' ', '').strip())
     quantity = borsch.find("div", class_="product-card__new-price").text.split("/")[1]
     diction[article] = dict(Наименование=name, Цена=price, Ссылка=blink,
-                            Единица_измерения="Цена ФормулаМ2Горный за" + quantity, Конкуренты="Цена ФормулаМ2Горный")
-
-
+                            Единица_измерения="Цена ФормулаМ2Горный за" + quantity, Конкуренты="ФормулаМ2Горный")
 
 def get_max_page(url: str) -> int:
     """Получаем максимальное количество страниц в каталоге"""
@@ -31,7 +33,7 @@ slovar = {}
 response = requests.get("https://gorniy.formulam2.ru/catalog/")
 soup = BeautifulSoup(response.text, "lxml")
 links = soup.find_all("div", class_="catalog-sections-item__img")
-for lin in links:
+for lin in links[1:3]:
     link = "https://gorniy.formulam2.ru/"+lin.find("a")["href"]
 
     page = get_max_page(link)
@@ -48,6 +50,7 @@ prices = []
 links = []
 quantities = []
 opponents = []
+headers = []
 for key, value in slovar.items():
     articles.append(key)
     names.append((slovar[key]["Наименование"]))
@@ -56,6 +59,7 @@ for key, value in slovar.items():
     quantities.append((slovar[key]["Единица_измерения"]))
     opponents.append((slovar[key]["Конкуренты"]))
 new_slovar = {
+    "Код": 1,
     "Конкуренты": opponents,
     "Артикул": articles,
     "Наименование": names,
@@ -63,7 +67,12 @@ new_slovar = {
     "Цена": prices,
     "Ссылка": links
 }
+for key, val in new_slovar.items():
+    headers.append(key)
 df = pd.DataFrame(new_slovar)
 path = os.path.abspath("Выгрузка цен (4).xlsx")
 with ExcelWriter(path, mode="a" if os.path.exists(path) else "w") as writer:
-    df.to_excel(writer, sheet_name="Лист 4")
+    df.to_excel(writer, sheet_name="Лист 1", index=False)
+
+print(len(slovar))
+print(slovar)

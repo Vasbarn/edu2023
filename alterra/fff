@@ -1,0 +1,28 @@
+path = os.path.abspath("Выгрузка цен (4).xlsx")
+with ExcelWriter(path, mode="a" if os.path.exists(path) else "w") as writer:
+    df.to_excel(writer, sheet_name="Лист 4")
+
+
+
+if os.path.exists(path):
+    pass
+else:
+ wb = Workbook()
+    ws = wb.active
+    ws["A1"] = "Код"
+    ws["B1"] = "Конкурент"
+    ws["C1"] = "Артикул"
+    ws["D1"] = "Наименование"
+    ws["E1"] = "Вид цены"
+    ws["F1"] = "Цена"
+    ws["G1"] = "Ссылка"
+    for r in range(2, len(slovar)+1):
+        code = ws.cell(row=r, column=1, value= 1)
+        opp = ws.cell(row=r, column=2, value="ФормулаМ2Горный")
+        art = ws.cell(row=r, column=3, value=articles[r-2])
+        name = ws.cell(row=r, column=4, value=names[r-2])
+        type_of_pr = ws.cell(row=r, column=5, value= quantities[r-2])
+        price = ws.cell(row=r, column=6, value=prices[r-2])
+        linking = ws.cell(row=r, column=7, value=links[r-2])
+    wb.save("Выгрузка цен (4).xlsx")
+wb = open("Выгрузка цен (4).xlsx")
