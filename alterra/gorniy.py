@@ -67,12 +67,19 @@ new_slovar = {
     "Цена": prices,
     "Ссылка": links
 }
-for key, val in new_slovar.items():
-    headers.append(key)
 df = pd.DataFrame(new_slovar)
 path = os.path.abspath("Выгрузка цен (4).xlsx")
-with ExcelWriter(path, mode="a" if os.path.exists(path) else "w") as writer:
-    df.to_excel(writer, sheet_name="Лист 1", index=False)
+if os.path.exists(path):
+    print("Pobeda1")
+    flag = open(path, "r")
+    print("Pobeda2")
+    flag.close()
+    print("Pobeda3")
+    os.remove(path)
+    print("Pobeda4")
+    path = os.path.abspath("Выгрузка цен (4).xlsx")
+    df.to_excel("C:\\Users\\User\\PycharmProjects\\edu2023\\alterra\\Выгрузка цен (4).xlsx", sheet_name="Лист 1", index=False)
+else:
+    print("wee are here")
 
-print(len(slovar))
-print(slovar)
+
