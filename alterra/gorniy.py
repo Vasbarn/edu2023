@@ -78,8 +78,10 @@ if os.path.exists(path):
     os.remove(path)
     print("Pobeda4")
     path = os.path.abspath("Выгрузка цен (4).xlsx")
-    df.to_excel("C:\\Users\\User\\PycharmProjects\\edu2023\\alterra\\Выгрузка цен (4).xlsx", sheet_name="Лист 1", index=False)
+    df.to_excel("C:\\Users\\Admin\\PycharmProjects\\edu2023\\alterra\\Выгрузка цен (4).xlsx", sheet_name="Лист 1", index=False)
 else:
-    print("wee are here")
+    with ExcelWriter(path, mode="w") as writer:
+        df.to_excel(writer, sheet_name="Лист 1")
+
 
 

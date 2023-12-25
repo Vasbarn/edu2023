@@ -2,27 +2,91 @@ path = os.path.abspath("Выгрузка цен (4).xlsx")
 with ExcelWriter(path, mode="a" if os.path.exists(path) else "w") as writer:
     df.to_excel(writer, sheet_name="Лист 4")
 
+import requests
+from bs4 import BeautifulSoup
+import json
+from typing import Dict
+import pandas as pd
+import os
+from pandas.io.excel import ExcelWriter
+from openpyxl import *
+import schedule
 
 
+def get_requisits(borsch: "BeautifulSoup", diction: Dict[str, dict]) -> None:
+    """Получаем основные реквизиты позиций и добавляем их в словарь"""
+    blink = "https://gorniy.formulam2.ru/" + borsch.find(class_="product-card__title").find("a").get("href")
+    name = borsch.find(class_="product-card__title").text.strip()
+    article = borsch.find(class_="product-card__index").text.replace("Код:", '').strip()
+    price = float(borsch.find(class_="product-card__new-price").find("span").text.replace(' ', '').strip())
+    quantity = borsch.find("div", class_="product-card__new-price").text.split("/")[1]
+    diction[article] = dict(Наименование=name, Цена=price, Ссылка=blink,
+                            Единица_измерения="Цена ФормулаМ2Горный за" + quantity, Конкуренты="ФормулаМ2Горный")
+
+def get_max_page(url: str) -> int:
+    """Получаем максимальное количество страниц в каталоге"""
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "lxml")
+    try:
+        max_page = int(soup.find_all(class_="pagination__link")[-1].text.strip())
+    except (IndexError, TypeError):
+        max_page = 1
+    return max_page
+
+slovar = {}
+response = requests.get("https://gorniy.formulam2.ru/catalog/")
+soup = BeautifulSoup(response.text, "lxml")
+links = soup.find_all("div", class_="catalog-sections-item__img")
+for lin in links[1:3]:
+    link = "https://gorniy.formulam2.ru/"+lin.find("a")["href"]
+
+    page = get_max_page(link)
+    for nump in range(1, 2):
+        response = requests.get(f"{link}?PAGEN_1={nump}")
+        soup = BeautifulSoup(response.text, "lxml")
+        goods = soup.find_all("div", class_="product-card products-grid__item")
+        for good in goods:
+            get_requisits(good, slovar)
+
+names = []
+articles = []
+prices = []
+links = []
+quantities = []
+opponents = []
+headers = []
+for key, value in slovar.items():
+    articles.append(key)
+    names.append((slovar[key]["Наименование"]))
+    links.append((slovar[key]["Ссылка"]))
+    prices.append((slovar[key]["Цена"]))
+    quantities.append((slovar[key]["Единица_измерения"]))
+    opponents.append((slovar[key]["Конкуренты"]))
+new_slovar = {
+    "Код": 1,
+    "Конкуренты": opponents,
+    "Артикул": articles,
+    "Наименование": names,
+    "Вид цены": quantities,
+    "Цена": prices,
+    "Ссылка": links
+}
+df = pd.DataFrame(new_slovar)
+path = os.path.abspath("Выгрузка цен (4).xlsx")
 if os.path.exists(path):
-    pass
+    print("Pobeda1")
+    flag = open(path, "r")
+    print("Pobeda2")
+    flag.close()
+    print("Pobeda3")
+    os.remove(path)
+    print("Pobeda4")
+    path = os.path.abspath("Выгрузка цен (4).xlsx")
+    df.to_excel("C:\\Users\\User\\PycharmProjects\\edu2023\\alterra\\Выгрузка цен (4).xlsx", sheet_name="Лист 1", index=False)
 else:
- wb = Workbook()
-    ws = wb.active
-    ws["A1"] = "Код"
-    ws["B1"] = "Конкурент"
-    ws["C1"] = "Артикул"
-    ws["D1"] = "Наименование"
-    ws["E1"] = "Вид цены"
-    ws["F1"] = "Цена"
-    ws["G1"] = "Ссылка"
-    for r in range(2, len(slovar)+1):
-        code = ws.cell(row=r, column=1, value= 1)
-        opp = ws.cell(row=r, column=2, value="ФормулаМ2Горный")
-        art = ws.cell(row=r, column=3, value=articles[r-2])
-        name = ws.cell(row=r, column=4, value=names[r-2])
-        type_of_pr = ws.cell(row=r, column=5, value= quantities[r-2])
-        price = ws.cell(row=r, column=6, value=prices[r-2])
-        linking = ws.cell(row=r, column=7, value=links[r-2])
-    wb.save("Выгрузка цен (4).xlsx")
-wb = open("Выгрузка цен (4).xlsx")
+    print("wee are here")
+
+
+
+
+
