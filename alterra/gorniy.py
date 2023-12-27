@@ -33,11 +33,11 @@ slovar = {}
 response = requests.get("https://gorniy.formulam2.ru/catalog/")
 soup = BeautifulSoup(response.text, "lxml")
 links = soup.find_all("div", class_="catalog-sections-item__img")
-for lin in links[1:3]:
+for lin in links:
     link = "https://gorniy.formulam2.ru/"+lin.find("a")["href"]
 
     page = get_max_page(link)
-    for nump in range(1, 2):
+    for nump in range(0, page):
         response = requests.get(f"{link}?PAGEN_1={nump}")
         soup = BeautifulSoup(response.text, "lxml")
         goods = soup.find_all("div", class_="product-card products-grid__item")
@@ -70,13 +70,9 @@ new_slovar = {
 df = pd.DataFrame(new_slovar)
 path = os.path.abspath("Выгрузка цен (4).xlsx")
 if os.path.exists(path):
-    print("Pobeda1")
     flag = open(path, "r")
-    print("Pobeda2")
     flag.close()
-    print("Pobeda3")
     os.remove(path)
-    print("Pobeda4")
     path = os.path.abspath("Выгрузка цен (4).xlsx")
     df.to_excel("C:\\Users\\Admin\\PycharmProjects\\edu2023\\alterra\\Выгрузка цен (4).xlsx", sheet_name="Лист 1", index=False)
 else:
