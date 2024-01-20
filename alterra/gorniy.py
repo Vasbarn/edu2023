@@ -33,11 +33,11 @@ slovar = {}
 response = requests.get("https://gorniy.formulam2.ru/catalog/")
 soup = BeautifulSoup(response.text, "lxml")
 links = soup.find_all("div", class_="catalog-sections-item__img")
-for lin in links:
+for lin in links[:3]:
     link = "https://gorniy.formulam2.ru/"+lin.find("a")["href"]
 
     page = get_max_page(link)
-    for nump in range(0, page):
+    for nump in range(0, 2):
         response = requests.get(f"{link}?PAGEN_1={nump}")
         soup = BeautifulSoup(response.text, "lxml")
         goods = soup.find_all("div", class_="product-card products-grid__item")
@@ -79,5 +79,10 @@ else:
     with ExcelWriter(path, mode="w") as writer:
         df.to_excel(writer, sheet_name="Лист 1")
 
+
+if __name__ == "__main__":
+    # main()
+while True:
+    if datetime.now().hour ==
 
 
