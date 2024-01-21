@@ -8,6 +8,36 @@ import os
 from pandas.io.excel import ExcelWriter
 from openpyxl import *
 
+import requests
+import fake_user_agent
+#from bs4 import BeautifulSoup
+
+session = requests.Session()
+url = 'https://barnaul.tstn.ru/kp/settings/?login=yes'
+user = fake_user_agent.user_agent()
+headers = {
+    "User-Agent": user
+}
+
+data = {
+    "USER_LOGIN": "ЛОГИН",
+    "USER_PASSWORD": "ПАРОЛЬ"
+}
+
+responce = session.post(
+    url,
+    data=data,
+    headers=headers
+)
+print(responce)
+
+main_url ='https://barnaul.tstn.ru/product/germetik-tekhnonikol-universalnyy-neytralnyy-silikonovyy-bestsvetnyy-280-ml/'
+main_responce = session.get(main_url, headers=headers).text
+
+print(main_responce)
+
+
+
 class ParserTechnonikol():
     def __init__(self):
         self.url = "https://barnaul.tstn.ru/"
