@@ -68,12 +68,12 @@ new_slovar = {
     "Ссылка": links
 }
 df = pd.DataFrame(new_slovar)
-path = os.path.abspath("Выгрузка цен (4).xlsx")
+path = os.path.abspath("../Выгрузка цен (4).xlsx")
 if os.path.exists(path):
     flag = open(path, "r")
     flag.close()
     os.remove(path)
-    path = os.path.abspath("Выгрузка цен (4).xlsx")
+    path = os.path.abspath("../Выгрузка цен (4).xlsx")
     df.to_excel("C:\\Users\\Admin\\PycharmProjects\\edu2023\\alterra\\Выгрузка цен (4).xlsx", sheet_name="Лист 1", index=False)
 else:
     with ExcelWriter(path, mode="w") as writer:
