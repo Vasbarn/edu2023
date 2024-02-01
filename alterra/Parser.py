@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-import ExcelWriter
+
 from typing import Dict, Any, Tuple
 from abc import ABC, abstractmethod
 
@@ -54,8 +54,60 @@ class Parser(ABC):
         else:
             raise TypeError("Каталог должен быть  словарем!")
 
+    @property
+    def data(self) -> Dict:
+        return self.__data
 
+    @data.setter
+    def data(self, var_dict: Dict[str, Tuple[Any]]):
+        if isinstance(var_dict, dict):
+            self.__data = var_dict
+        else:
+            raise TypeError("Значение data может быть только словарем")
 
+    @property
+    def headers(self):
+        return self.__headers
+
+    @headers.setter
+    def headers(self, value):
+        self.__headers = value
+
+    @property
+    def cookies(self):
+        return self.__headers
+
+    @cookies.setter
+    def cookies(self, value):
+        self.__headers = value
+
+    def _get_main_url(self) -> str:
+        """
+        Передаем название конкурента из книги xlsx и смотрим,
+        есть ли такой конкурент в базе, если есть возвращаем url на сайт и присваивавшем его переменной __main_url
+        """
+        url = "https://znakooo.ru/catalog/"
+        return url
+
+    @abstractmethod
+    def load_catalog(self):
+        """Загрузка словаря, где ключ это название группы товаров, а значение ссылка"""
+        pass
+
+    @abstractmethod
+    def do_it(self, url: str):
+        """Парсинг по конкретному url товара"""
+        pass
+
+    @abstractmethod
+    def do_some(self, url: str):
+        """Парсинг по 1 выбранному каталогу + пагинация"""
+        pass
+
+    @abstractmethod
+    def do_all(self):
+        """Запуск парсинга по всем ссылкам каталога + пагинация, если есть"""
+        pass
 
     def safe_data_to_file(self, full_name: str, message_mark: bool = False):
         """Сохранение словаря self.__data в книгу xlsx по указанному пути"""
@@ -82,4 +134,3 @@ class Parser(ABC):
                 print("Данные по {} сохранены в {}".format(self.name, full_name))
         except PermissionError:
             print("Не могу сохранить данные, в файл. Так как он открыт! {}".format(self.name))
-

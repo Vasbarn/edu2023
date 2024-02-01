@@ -36,11 +36,12 @@ class ParserTechnonikol():
             group_href = group.find("a").get("href")
             print("zdess")
             self.catalog_url.append(self.url[:-9] + group_href)
+        return self.catalog_url
 
 
-    def get_max_page(self):
+    def get_max_page(self, par: "ParserTechnonikol"):
 
-        for urls in self.catalog_url[:1]:
+        for urls in par.get_catalog():
             self.driver.get(urls)
             soup = BeautifulSoup(self.browser, 'lxml')
             max_pgs = soup.find("div", class_="products__list products__list_e1").get("data-showmore").split(",")
@@ -75,7 +76,7 @@ class ParserTechnonikol():
 
 
 x = ParserTechnonikol()
-x.get_catalog()
+l = x.get_catalog()
 x.get_max_page()
 x.get_product_info()
 
