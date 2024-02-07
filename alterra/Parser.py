@@ -86,34 +86,17 @@ class Parser(ABC):
         Передаем название конкурента из книги xlsx и смотрим,
         есть ли такой конкурент в базе, если есть возвращаем url на сайт и присваивавшем его переменной __main_url
         """
-        url = "https://znakooo.ru/catalog/"
+        url = "https://formulam2.ru/"
         return url
 
-    @abstractmethod
-    def load_catalog(self):
-        """Загрузка словаря, где ключ это название группы товаров, а значение ссылка"""
-        pass
 
-    @abstractmethod
-    def do_it(self, url: str):
-        """Парсинг по конкретному url товара"""
-        pass
 
-    @abstractmethod
-    def do_some(self, url: str):
-        """Парсинг по 1 выбранному каталогу + пагинация"""
-        pass
 
-    @abstractmethod
-    def do_all(self):
-        """Запуск парсинга по всем ссылкам каталога + пагинация, если есть"""
-        pass
 
-    def safe_data_to_file(self, full_name: str, message_mark: bool = False):
+
+
+    def safe_data_to_file(self, full_name: str):
         """Сохранение словаря self.__data в книгу xlsx по указанному пути"""
-        parts_path = full_name.split(os.sep)
-        if not os.path.exists(os.sep.join(parts_path[:-1])):
-            os.mkdir(os.sep.join(parts_path[:-1]))
         df = pd.DataFrame()
         df["Код"] = ""
         df["Конкурент"] = ""
@@ -122,15 +105,10 @@ class Parser(ABC):
         df["Вид цены"] = ""
         df["Цена"] = ""
         df["Ссылка"] = ""
-        try:
-            for key, item in self.data.items():
-                df.loc[len(df)] = (str(item[6]), str(item[0]), str(item[1]).strip(), str(item[2]), str(item[3]),
-                                   str(item[4]),
-                                   str(item[5]))
-            writer = pd.ExcelWriter(full_name)
-            df.to_excel(writer, sheet_name="Данные", index=False)
-            writer.save()
-            if message_mark:
-                print("Данные по {} сохранены в {}".format(self.name, full_name))
-        except PermissionError:
-            print("Не могу сохранить данные, в файл. Так как он открыт! {}".format(self.name))
+
+        for key, item in self.data.items():
+            df.loc[len(df)] = (str(item[6]), str(item[0]), str(item[1]).strip(), str(item[2]), str(item[3]),
+                               str(item[4]),
+                               str(item[5]))
+        writer = pd.ExcelWriter(full_name)
+        df.to_excel(writer, sheet_name="Данные", index=False)
