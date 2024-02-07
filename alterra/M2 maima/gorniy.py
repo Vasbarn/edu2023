@@ -27,17 +27,18 @@ def get_max_page(url: str) -> int:
         max_page = int(soup.find_all(class_="pagination__link")[-1].text.strip())
     except (IndexError, TypeError):
         max_page = 1
+        print(max_page)
     return max_page
 
 slovar = {}
 response = requests.get("https://gorniy.formulam2.ru/catalog/")
 soup = BeautifulSoup(response.text, "lxml")
 links = soup.find_all("div", class_="catalog-sections-item__img")
-for lin in links[:3]:
+for lin in links:
     link = "https://gorniy.formulam2.ru/"+lin.find("a")["href"]
 
     page = get_max_page(link)
-    for nump in range(0, 2):
+    for nump in range(0, int(page)):
         response = requests.get(f"{link}?PAGEN_1={nump}")
         soup = BeautifulSoup(response.text, "lxml")
         goods = soup.find_all("div", class_="product-card products-grid__item")
@@ -68,21 +69,16 @@ new_slovar = {
     "Ссылка": links
 }
 df = pd.DataFrame(new_slovar)
-path = os.path.abspath("../Выгрузка цен (4).xlsx")
+path = os.path.abspath("Выгрузка цен (4).xlsx")
 if os.path.exists(path):
     flag = open(path, "r")
     flag.close()
     os.remove(path)
-    path = os.path.abspath("../Выгрузка цен (4).xlsx")
+    path = os.path.abspath("Выгрузка цен (4).xlsx")
     df.to_excel("C:\\Users\\Admin\\PycharmProjects\\edu2023\\alterra\\Выгрузка цен (4).xlsx", sheet_name="Лист 1", index=False)
 else:
     with ExcelWriter(path, mode="w") as writer:
         df.to_excel(writer, sheet_name="Лист 1")
 
-
-if __name__ == "__main__":
-    # main()
-while True:
-    if datetime.now().hour ==
 
 

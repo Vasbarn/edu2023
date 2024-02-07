@@ -81,6 +81,14 @@ new_slovar = {
     "Ссылка": linkages
 
 }
+new_slovar_ga = {
+    "Код": 1,
+    "Конкуренты": "Знак Майма",
+    "Артикул": "_",
+    "Наименование": names_ga,
+    "Вид цены": type_ga,
+    "Цена": prices_ga,
+    "Ссылка": linkages_ga}
 df = pd.DataFrame(new_slovar)
 path = os.path.abspath("../Выгрузка цен Знак.xlsx")
 if os.path.exists(path):
