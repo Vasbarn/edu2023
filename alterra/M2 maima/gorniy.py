@@ -34,11 +34,11 @@ slovar = {}
 response = requests.get("https://gorniy.formulam2.ru/catalog/")
 soup = BeautifulSoup(response.text, "lxml")
 links = soup.find_all("div", class_="catalog-sections-item__img")
-for lin in links:
+for lin in links[1:3]:
     link = "https://gorniy.formulam2.ru/"+lin.find("a")["href"]
 
     page = get_max_page(link)
-    for nump in range(0, int(page)):
+    for nump in range(0, 3):
         response = requests.get(f"{link}?PAGEN_1={nump}")
         soup = BeautifulSoup(response.text, "lxml")
         goods = soup.find_all("div", class_="product-card products-grid__item")
