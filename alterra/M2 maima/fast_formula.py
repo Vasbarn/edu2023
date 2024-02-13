@@ -44,7 +44,7 @@ async def get_page_data_brn(session, href, page):
 
 
 
-
+ link = "https://znakooo.ru"+ href + f"?PAGEN_4={page}"
 
 async def gather_data_brn():
 
