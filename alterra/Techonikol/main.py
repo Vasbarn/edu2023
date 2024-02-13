@@ -8,9 +8,7 @@ import os
 from pandas.io.excel import ExcelWriter
 from openpyxl import *
 
-import requests
-import fake_user_agent
-#from bs4 import BeautifulSoup
+
 
 
 

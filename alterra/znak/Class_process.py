@@ -43,11 +43,10 @@ class Znak():
             try:
                 response = requests.get(last_link)
                 soup = BeautifulSoup(response.text, 'lxml')
-
-            except(requests.exceptions.ConnectTimeout):
+                name = soup.find(class_="product-title").text
+            except(requests.exceptions.ConnectTimeout,AttributeError, PermissionErrorне в):
                 print("r", end="")
                 continue
-            name = soup.find(class_="product-title").text
             self.names.append(name)
             cardprice = soup.find(class_="p-price p-price_strong").text.strip()
             self.cardprices.append(cardprice)
@@ -66,6 +65,34 @@ class Znak():
                 artings = a[-1:]
                 for val in artings:
                     self.articles.append(val.text)
+
+        new_slovar = {
+            "Код": 1,
+            "Конкуренты": "Знак Барнаул",
+            "Артикул": self.articles,
+            "Наименование": self.names,
+            "Вид цены": self.types,
+            "Цена": self.prices,
+            "Цена по карте": self.cardprices,
+            "Ссылка": self.linkages
+        }
+        df = pd.DataFrame(new_slovar)
+        path = os.path.abspath("../Выгрузка цен Знак1.xlsx")
+        if os.path.exists(path):
+            flag = open(path, "r")
+            flag.close()
+            os.remove(path)
+            path = os.path.abspath("../Выгрузка цен Знак1.xlsx")
+            writer = pd.ExcelWriter("Выгрузка цен Знак1.xlsx", engine="xlsxwriter")
+            df.to_excel(writer,
+                        sheet_name="Барнаул",
+                        index=False)
+
+        else:
+            with ExcelWriter(path, mode="w") as writer:
+                df.to_excel(writer, sheet_name="Барнаул")
+
+        path = os.path.abspath("../Выгрузка цен Знак1.xlsx")
         end = time.time()
 
 
@@ -113,50 +140,9 @@ class Znak():
     #             items_ga.append((group_href, i))
     #
 
-    def main(self):
-
-        new_slovar = {
-            "Код": 1,
-            "Конкуренты": "Знак Барнаул",
-            "Артикул": self.articles,
-            "Наименование": self.names,
-            "Вид цены": self.types,
-            "Цена": self.prices,
-            "Цена по карте": self.cardprices,
-            "Ссылка": self.linkages
-        }
-        # new_slovar_ga = {
-        #     "Код": 1,
-        #     "Конкуренты": "Знак Майма",
-        #     "Артикул": articles_ga,
-        #     "Наименование": names_ga,
-        #     "Вид цены": types_ga,
-        #     "Цена": prices_ga,
-        #     "Ссылка": linkages_ga
-        # }
-
-        df = pd.DataFrame(new_slovar)
 
 
-        # df2 = pd.DataFrame(new_slovar_ga)
-        path = os.path.abspath("../Выгрузка цен Знак1.xlsx")
-        if os.path.exists(path):
-            flag = open(path, "r")
-            flag.close()
-            os.remove(path)
-            path = os.path.abspath("../Выгрузка цен Знак1.xlsx")
-            writer = pd.ExcelWriter("Выгрузка цен Знак1.xlsx", engine="xlsxwriter")
-            df.to_excel(writer,
-                        sheet_name="Барнаул",
-                        index=False)
-            # df2.to_excel(writer,
-            #             sheet_name="Майма",
-            #             index=False)
-        else:
-            with ExcelWriter(path, mode="w") as writer:
-                df.to_excel(writer, sheet_name="Барнаул")
-                # df2.to_excel(writer, sheet_name="Майма")
-        path = os.path.abspath("../Выгрузка цен Знак1.xlsx")
+
 
 
 if __name__ == "__main__":
@@ -169,7 +155,6 @@ if __name__ == "__main__":
     pool = Pool(processes=60)
     pool.starmap(znk.get_page_data_brn,znk.items)
     # pool.starmap(get_page_data_ga,items_ga)
-    znk.main()
     end = time.time()
     print(end-start)
 
