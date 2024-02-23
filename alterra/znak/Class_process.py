@@ -44,7 +44,7 @@ class Znak():
                 response = requests.get(last_link)
                 soup = BeautifulSoup(response.text, 'lxml')
                 name = soup.find(class_="product-title").text
-            except(requests.exceptions.ConnectTimeout,AttributeError, PermissionErrorне в):
+            except(requests.exceptions.ConnectTimeout,AttributeError, PermissionError):
                 print("r", end="")
                 continue
             self.names.append(name)
@@ -65,6 +65,10 @@ class Znak():
                 artings = a[-1:]
                 for val in artings:
                     self.articles.append(val.text)
+        print(self.types)
+        print(self.names)
+        print(self.cardprices)
+        print(self.prices)
 
         new_slovar = {
             "Код": 1,

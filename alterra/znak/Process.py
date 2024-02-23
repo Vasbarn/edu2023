@@ -153,7 +153,6 @@ def gather_data_ga():
 
 
 def main():
-
     new_slovar = {
         "Код": 1,
         "Конкуренты": "Знак Барнаул",
