@@ -26,6 +26,7 @@ items = []
 items_ga = []
 articles_ga = []
 sys.setrecursionlimit(10000)
+datas={}
 def get_page_data_brn(href, page):
     start = time.time()
     link = "https://znakooo.ru" + href + f"?PAGEN_4={page}"
@@ -35,35 +36,36 @@ def get_page_data_brn(href, page):
     for op in old_pr:
         hrf = op.find("a").get("href")
         last_link = "https://znakooo.ru" + hrf
-        linkages.append(last_link)
+        # linkages.append(last_link)
         try:
             response = requests.get(last_link)
             soup = BeautifulSoup(response.text, 'lxml')
 
-        except(requests.exceptions.ConnectTimeout):
+        except(requests.exceptions.ConnectTimeout,AttributeError, PermissionError):
             print("r", end="")
             continue
         name = soup.find(class_="product-title").text
-        names.append(name)
+        # names.append(name)
         cardprice = soup.find(class_="p-price p-price_strong").text.strip()
-        cardprices.append(cardprice)
+        # cardprices.append(cardprice)
         type = soup.find(class_="p-price").text.strip()
         price = type.split("руб.")[0]
-        prices.append(price)
-        if "шт" in type:
-            types.append("Цена ЗнакБарнаул за шт")
-        elif "Уп" in type:
-            types.append("Цена ЗнакБарнаул за Уп")
-        elif "пог. м" in type:
-            types.append("Цена ЗнакБарнаул за пог. м")
+        # prices.append(price)
+        # if "шт" in type:
+        #     types.append("Цена ЗнакБарнаул за шт")
+        # elif "Уп" in type:
+        #     types.append("Цена ЗнакБарнаул за Уп")
+        # elif "пог. м" in type:
+        #     types.append("Цена ЗнакБарнаул за пог. м")
         article = soup.find_all(class_="product-characteristics")
         for art in article:
             a = art.find_all("span")
             artings = a[-1:]
             for val in artings:
-                articles.append(val.text)
+
+                datas[val.text] = dict(Наименование=name, Цена=price, Цена_по_карте= cardprice, Ссылка=last_link)
     end = time.time()
-    return names, articles, types, prices, cardprices
+
 
 
 
@@ -152,13 +154,21 @@ def gather_data_ga():
             items_ga.append((group_href, i))
 
 
-def main():
+def main(slovar: dict):
+    for key, value in slovar.items():
+        articles.append(key)
+        names.append((slovar[key]["Наименование"]))
+        linkages.append((slovar[key]["Ссылка"]))
+        prices.append((slovar[key]["Цена"]))
+        cardprices.append((slovar[key]["Цена_по_карте"]))
+        # quantities.append((slovar[key]["Единица_измерения"]))
+        # opponents.append((slovar[key]["Конкуренты"]))
     new_slovar = {
         "Код": 1,
         "Конкуренты": "Знак Барнаул",
         "Артикул": articles,
         "Наименование": names,
-        "Вид цены": types,
+        # "Вид цены": type,
         "Цена": prices,
         "Цена по карте": cardprices,
         "Ссылка": linkages
@@ -174,8 +184,6 @@ def main():
     # }
 
     df = pd.DataFrame(new_slovar)
-
-
     # df2 = pd.DataFrame(new_slovar_ga)
     path = os.path.abspath("../Выгрузка цен Знак1.xlsx")
     if os.path.exists(path):
@@ -211,7 +219,7 @@ if __name__ == "__main__":
     pool = Pool(processes=60)
     pool.starmap(get_page_data_brn,items)
     # pool.starmap(get_page_data_ga,items_ga)
-    main()
+    main(datas)
     end = time.time()
     print(end-start)
 
