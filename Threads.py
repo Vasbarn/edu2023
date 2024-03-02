@@ -16,5 +16,5 @@ for i in range(5):
 def start(elem: Thread):
     elem.start()
 
-list(map(start, potoks))
+(map(start, potoks))
 

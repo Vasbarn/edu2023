@@ -7,8 +7,10 @@ from pandas.io.excel import ExcelWriter
 from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(category=InsecureRequestWarning)
 from multiprocessing import Pool
+from threading import Thread
 import sys
 import time
+potoks = []
 names = []
 types = []
 linkages =[]
@@ -28,15 +30,16 @@ articles_ga = []
 sys.setrecursionlimit(10000)
 datas={}
 def get_page_data_brn(href, page):
-    start = time.time()
-    link = "https://znakooo.ru" + href + f"?PAGEN_4={page}"
+
+    # link = "https://znakooo.ru" + href + f"?PAGEN_4={page}"
+    link = "https://znakooo.ru/catalog/dveri/" + f"?PAGEN_4={page}"
     response = requests.get(link)
     soup = BeautifulSoup(response.text, "lxml")
     old_pr = soup.find_all(class_="name p-product__title")
     for op in old_pr:
         hrf = op.find("a").get("href")
         last_link = "https://znakooo.ru" + hrf
-        # linkages.append(last_link)
+        linkages.append(last_link)
         try:
             response = requests.get(last_link)
             soup = BeautifulSoup(response.text, 'lxml')
@@ -45,26 +48,26 @@ def get_page_data_brn(href, page):
             print("r", end="")
             continue
         name = soup.find(class_="product-title").text
-        # names.append(name)
+        names.append(name)
         cardprice = soup.find(class_="p-price p-price_strong").text.strip()
-        # cardprices.append(cardprice)
+        cardprices.append(cardprice)
         type = soup.find(class_="p-price").text.strip()
         price = type.split("руб.")[0]
-        # prices.append(price)
-        # if "шт" in type:
-        #     types.append("Цена ЗнакБарнаул за шт")
-        # elif "Уп" in type:
-        #     types.append("Цена ЗнакБарнаул за Уп")
-        # elif "пог. м" in type:
-        #     types.append("Цена ЗнакБарнаул за пог. м")
+        prices.append(price)
+        if "шт" in type:
+            types.append("Цена ЗнакБарнаул за шт")
+        elif "Уп" in type:
+            types.append("Цена ЗнакБарнаул за Уп")
+        elif "пог. м" in type:
+            types.append("Цена ЗнакБарнаул за пог. м")
         article = soup.find_all(class_="product-characteristics")
         for art in article:
             a = art.find_all("span")
             artings = a[-1:]
             for val in artings:
+                articles.append(val.text)
 
-                datas[val.text] = dict(Наименование=name, Цена=price, Цена_по_карте= cardprice, Ссылка=last_link)
-    end = time.time()
+
 
 
 
@@ -112,6 +115,7 @@ def get_page_data_brn(href, page):
 
 
 def gather_data_brn():
+
     url = 'http://znakooo.ru/catalog/'
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'lxml')
@@ -154,24 +158,20 @@ def gather_data_ga():
             items_ga.append((group_href, i))
 
 
-def main(slovar: dict):
-    for key, value in slovar.items():
-        articles.append(key)
-        names.append((slovar[key]["Наименование"]))
-        linkages.append((slovar[key]["Ссылка"]))
-        prices.append((slovar[key]["Цена"]))
-        cardprices.append((slovar[key]["Цена_по_карте"]))
-        # quantities.append((slovar[key]["Единица_измерения"]))
-        # opponents.append((slovar[key]["Конкуренты"]))
+def main(x):
+    start = time.time()
+    print(x)
+
+
     new_slovar = {
         "Код": 1,
         "Конкуренты": "Знак Барнаул",
-        "Артикул": articles,
-        "Наименование": names,
-        # "Вид цены": type,
-        "Цена": prices,
-        "Цена по карте": cardprices,
-        "Ссылка": linkages
+        "Артикул": x[2],
+        "Наименование": x[1],
+        "Вид цены": x[5],
+        "Цена": x[3],
+        "Цена по карте": x[4],
+        "Ссылка": x[0]
     }
     # new_slovar_ga = {
     #     "Код": 1,
@@ -203,23 +203,16 @@ def main(slovar: dict):
             df.to_excel(writer, sheet_name="Барнаул")
             # df2.to_excel(writer, sheet_name="Майма")
     path = os.path.abspath("../Выгрузка цен Знак1.xlsx")
+    end = time.time()
+    print(end - start)
 
 
 if __name__ == "__main__":
-# 	while True:
-# 		if datetime.datetime.now().hour == 7:
-# main()
-# 			time.sleep(60 * 60 * 24)
-# 		time.sleep(60 * 20)
-    start = time.time()
 
     gather_data_brn()
-    #gather_data_ga()
-
     pool = Pool(processes=60)
-    pool.starmap(get_page_data_brn,items)
+    datalist = pool.starmap(get_page_data_brn,items)
     # pool.starmap(get_page_data_ga,items_ga)
-    main(datas)
-    end = time.time()
-    print(end-start)
+    main(datalist)
+
 

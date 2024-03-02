@@ -35,14 +35,16 @@ async def get_page_data_brn(session, href, page):
         for op in old_pr:
             hrf = op.find("a").get("href")
             last_link = "https://znakooo.ru" + hrf
-            print(last_link)
+            linkages.append(last_link)
             response = await session.get(last_link)
             soup = BeautifulSoup(await response.text(), 'lxml')
             name = soup.find(class_="product-title").text
+            names.append(name)
             cardprice = soup.find(class_="p-price p-price_strong").text.strip()
+            cardprices.append(cardprice)
             type = soup.find(class_="p-price").text.strip()
             price = type.split("руб.")[0]
-
+            prices.append(price)
             if "шт" in type:
                 types.append("Цена ЗнакБарнаул за шт")
             elif "Уп" in type:
@@ -55,15 +57,11 @@ async def get_page_data_brn(session, href, page):
                 artings = a[-1:]
                 for val in artings:
                     articles.append(val.text)
-        names.append(name)
-        cardprices.append(cardprice)
-        linkages.append(last_link)
-        prices.append(price)
-    print(len(names))
-    print(len(cardprices))
-    print(len(linkages))
-    print(len(prices))
-    print(len(articles))
+
+
+
+
+
 
 # async def get_page_data_ga(session, href, page):
 #     link = "https://galtaysk.znakooo.ru"+ href + f"?PAGEN_4={page}"
@@ -138,6 +136,14 @@ async def gather_data_brn():
 def main():
     start = time.time()
     asyncio.run(gather_data_brn())
+    print(len(articles))
+    print(len(names))
+    print(len(types))
+    print(len(cardprices))
+    print(len(linkages))
+    print(names)
+    print(linkages)
+
     # # asyncio.run(gather_data_ga())
 
 
@@ -160,9 +166,9 @@ def main():
     #     "Ссылка": linkages_ga}
 
     df = pd.DataFrame(new_slovar)
-    for v in range(1,len(df)):
-        for elem in prices:
-            df = df._set_value(index=v, col='F', value=elem)
+    # for v in range(1,len(df)):
+    #     for elem in prices:
+    #         df = df._set_value(index=v, col='F', value=elem)
 
     # df2 = pd.DataFrame(new_slovar_ga)
     path = os.path.abspath("../Выгрузка цен Знак.xlsx")
@@ -193,6 +199,7 @@ if __name__ == "__main__":
 # 			time.sleep(60 * 60 * 24)
 # 		time.sleep(60 * 20)
 
+    gather_data_brn()
 
     main()
 

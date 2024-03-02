@@ -36,10 +36,8 @@ tbl_list = ["DT_NSO_1400_003V1", "DT_NSO_0800_008V1"]
 url = "https://opendata.1212.mn/api/Data?type=xml"
 datas = {
     "tbl_id": "DT_NSO_1400_003V1",
-#     "Period": ["2010"],
-#     # "CODE": ["1"]
 }
-#
+
 resp = requests.post(url, json=datas)
 soup = BeautifulSoup(resp.text, "lxml")
 
@@ -65,11 +63,11 @@ for elem in values:
     bal_value.append(elem.text)
 for i in range(len(bal_period)):
     balance_data[bal_period[i]] = bal_value[i]
-all_data["СБАЛАНСИРОВАННЫЙ БАЛАНС БЮДЖЕТА ОБЩЕГО УПРАВЛЕНИЯ"] = balance_data
-print(all_data)
+all_data["Баланс бюджета общего управления"] = balance_data
+df = pd.DataFrame(all_data)
+print(df)
 
-'FOREIGN TRADE MONTHLY TOTAL TURNOVER, EXPORT, IMPORT, by month: DT_NSO_1400_003V1'
 
-'''DT_NSO_0800_008V1'''
+
     
 
