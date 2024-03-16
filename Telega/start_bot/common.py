@@ -17,11 +17,10 @@ client = TelegramClient(session, api_id, api_hash)
 async def handle_message(event):
     # Выводим в консоль данные о текущем пользователе, для проверки
         sender_username =  event.get_sender()
-
+        print(sender_username)
         if sender_username == "Start Checker":
             d.append(message.Message)
-            print(d)
-        await client.run_until_disconnected()
+            await client.run_until_disconnected()
 
     # Бот будет запущен пока мы сами не завершим его работ
 
