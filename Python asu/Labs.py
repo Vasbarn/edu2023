@@ -25,13 +25,7 @@ from copy import deepcopy
 #             for cells in rows:
 #                 return "\t".join(cells)
 
-matrix = [
-    [2,2,3],
-    [4,5,6],
-    [8,8,8]
-    ]
-for rows in matrix:
-    print("\n".join(rows))
+
 
 
 
