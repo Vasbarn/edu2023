@@ -12,6 +12,9 @@ api_id = 21251279
 api_hash = '40aa5369202c4906ad656ad92a8d8427'
 d = []
 client = TelegramClient(session, api_id, api_hash)
+username = "Start Checker"
+
+
 
 @client.on(events.NewMessage(pattern='Проверка запущена'))
 async def handle_message(event):
@@ -27,7 +30,12 @@ async def handle_message(event):
 
 
 async def handle_messages_to_send():
-       print("pdfr")
+    print(1)
+    username = "@Start_Checker_bot"
+    entit = client.get_entity(username)
+    await client.send_message(entity=username, message= "/start")
+    print(2)
+
 
 async def main():
     await handle_messages_to_send()
