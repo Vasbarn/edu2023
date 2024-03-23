@@ -5,12 +5,12 @@ from aiogram.filters.command import Command, CommandStart
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token="7181531660:AAHdvp0J6kPdQK237ct0ySbjcB6QSTCv2ko")
+bot = Bot(token="6579477792:AAFzRL7T-noWx3Ce74mR7qgfE-xCBuzaQYM")
 dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def cmd_start(message:types.Message):
-    await message.answer('Проверка запущена')
+    await message.answer('Все работает')
 
 # @dp.message(CommandStart())
 # async def cmd_start(message:types.Message):
