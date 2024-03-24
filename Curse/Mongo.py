@@ -94,7 +94,7 @@ for el in var2:
 
 for i in range(len(loyal_period)-1):
     loyal_data[loyal_period[i]] = loyal_value[i]
-print(loyal_data)
+# print(loyal_data)
 all_data["Общие обязательства"] = loyal_data
 df = pd.DataFrame(all_data)
 print(df)
